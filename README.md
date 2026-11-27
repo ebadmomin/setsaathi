@@ -67,7 +67,7 @@ Cloudflare's Git deployment does not apply D1 migrations automatically. For a ma
 
 Cloudflare secrets, including `SECRET_KEY`, `OPENROUTER_API_KEY`, `BREVO_API_KEY`, and `BREVO_SENDER_EMAIL`, belong in Worker settings or Wrangler secrets. Brevo powers password-reset email; OpenRouter powers AI Coach responses. See [Worker setup](worker/README.md) for their exact configuration and [account migration](docs/ACCOUNT_MIGRATION.md) before connecting this repository to a new Cloudflare account. Never commit `.dev.vars`, `.env`, tokens, passwords, local SQLite databases, or D1 exports. Signing in to GitHub in a browser does not authenticate the Git CLI; use `gh auth login -h github.com` when pushing from a new machine.
 
-If you want to upload code without changing the current live site, push it to a branch other than `main` first. Older commits contain generated `dist/` and Python `__pycache__/` files; these are not required for deployment and should not be uploaded again. A previously exposed OpenRouter key in Git history was revoked; removing the file later did not erase that old commit.
+To upload code without changing the live site, push to a branch other than `main` first. Keep generated `dist/`, Python `__pycache__/`, local databases, and secrets out of Git. This repository has a fresh commit history; previously exposed credentials must remain revoked.
 
 ## Checks
 
@@ -78,3 +78,7 @@ npm run worker:test
 ```
 
 See [OpenRouter setup](docs/OPENROUTER_SETUP.md) for AI Coach configuration and [exercise library notes](docs/EXERCISE_LIBRARY.md) for exercise data and licensing.
+
+## Repository and deployment
+
+This repository is the source for the SetSaathi Cloudflare Worker at [app.setsaathi.workers.dev](https://app.setsaathi.workers.dev/). Pushes to `main` trigger a Worker build; D1 migrations must be applied separately.
