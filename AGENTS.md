@@ -13,3 +13,8 @@ Before finishing a UI task:
 3. Run `npm run build` and report any view that could not be checked.
 
 Do not put secrets, local databases, generated `dist/`, or `node_modules` in Git.
+
+
+## Account and commit identity
+
+Use only the GitHub account `ebadmomin` belonging to Ebad Momin for this repository. Before any GitHub write or push, verify the signed-in account is `ebadmomin` and the commit author is `Ebad Momin <ebadarmanmomin@gmail.com>`. Never use another person’s account, credentials, token, or Git author identity. If the correct identity is unavailable, stop the GitHub action and ask Ebad to sign in. Do not touch other accounts or repositories.
