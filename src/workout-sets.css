@@ -1,0 +1,60 @@
+/* Set logging uses the same compact action and modal on both member surfaces. */
+.plan-page .progress-exercise-utilities { display: flex; grid-column: 3; grid-row: 1; align-self: start; justify-self: end; align-items: center; gap: .5rem; }
+.plan-page .progress-exercise-utilities .set-log { margin: 0; }
+.plan-page .set-log { display: flex; align-items: center; gap: .55rem; min-width: 0; }
+.plan-page .progress-exercise-utilities .set-log-trigger,
+.plan-page .progress-exercise-utilities .exercise-how-to { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; box-sizing: border-box; padding: .45rem .75rem; border: 1px solid color-mix(in srgb, var(--studio-accent) 55%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--studio-accent) 9%, transparent); color: var(--studio-accent); font: 700 .76rem/1 var(--studio-body); white-space: nowrap; cursor: pointer; }
+.plan-page .progress-exercise-utilities .set-log-trigger:hover,
+.plan-page .progress-exercise-utilities .exercise-how-to:hover { border-color: var(--studio-accent); background: var(--studio-accent); color: var(--studio-deep); }
+.plan-page .progress-exercise-utilities .set-log-trigger:focus-visible,
+.plan-page .progress-exercise-utilities .exercise-how-to:focus-visible { outline: 2px solid var(--studio-accent); outline-offset: 2px; }
+.plan-page .progress-exercise > .progress-undo { grid-column: 3; grid-row: 2; align-self: center; justify-self: end; min-width: 88px; min-height: 40px; padding: .4rem .65rem; border: 1px solid var(--studio-line); border-radius: 8px; background: var(--studio-surface-2); color: var(--studio-text); font: 700 .76rem var(--studio-body); cursor: pointer; }
+.plan-page .progress-exercise > .progress-undo:hover { border-color: var(--studio-accent); color: var(--studio-accent); }
+.plan-page .progress-exercise-actions .action-change { border-color: color-mix(in srgb, var(--studio-accent) 65%, transparent) !important; color: var(--studio-accent) !important; }
+.plan-page .progress-exercise-actions .action-change:hover,
+.plan-page .progress-exercise-actions .action-change:focus-visible,
+.plan-page .progress-exercise.status-replaced .action-change { border-color: var(--studio-accent) !important; background: var(--studio-accent) !important; color: var(--studio-deep) !important; }
+.plan-page .progress-exercise-actions .action-done:hover,
+.plan-page .progress-exercise-actions .action-done:focus-visible { border-color: #2fc179 !important; background: #187d58 !important; color: #fff !important; }
+.plan-page .log-grid li .set-log { margin-left: auto; flex-wrap: wrap; justify-content: flex-end; text-align: right; }
+body.set-log-open { overflow: hidden; }
+.set-log-overlay { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 1rem; background: rgb(0 0 0 / .72); }
+.set-log-dialog { width: min(100%, 540px); max-height: min(85vh, 760px); overflow: auto; box-sizing: border-box; padding: clamp(1rem, 3vw, 1.75rem); border: 1px solid var(--studio-line, #45494a); border-radius: 20px; background: var(--studio-surface, #1d2224); color: var(--studio-text, #f6f6f4); box-shadow: 0 24px 80px rgb(0 0 0 / .45); font-family: var(--studio-body, sans-serif); }
+.set-log-dialog-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+.set-log-kicker { color: var(--studio-accent, #f8b766); font: 700 .7rem var(--studio-body, sans-serif); letter-spacing: .12em; }
+.set-log-dialog h2 { margin: .25rem 0; color: var(--studio-text, #fff); font: 700 1.8rem var(--studio-body, sans-serif); }
+.set-log-dialog-head p { margin: 0; color: var(--studio-muted, #b8c3c0); }
+.set-log-dialog-head small { display: block; margin-top: .5rem; color: var(--studio-muted, #b8c3c0); font-size: .8rem; }
+.set-log-close { flex: none; display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid var(--studio-line, #45494a); border-radius: 50%; background: var(--studio-surface-2, #282e30); color: var(--studio-text, #fff); font: 500 1.5rem sans-serif; cursor: pointer; }
+.set-log-head, .set-log-row { display: grid; grid-template-columns: 32px minmax(70px,1fr) minmax(100px,1.2fr) 36px; gap: .45rem; align-items: center; margin-top: .5rem; }
+.set-log-head { color: var(--studio-muted, #b8c3c0); font-size: .75rem; font-weight: 700; }
+.set-log-row > span { font-size: .85rem; font-weight: 700; }
+.set-log-row input { width: 100%; min-width: 0; min-height: 42px; box-sizing: border-box; padding: .45rem .55rem; border: 1px solid var(--studio-line, #45494a); border-radius: 8px; background: var(--studio-deep, #15191a); color: var(--studio-text, #fff); font: 600 .85rem var(--studio-body, sans-serif); }
+.set-log-row [data-set-action="remove"] { width: 36px; height: 40px; padding: 0; border: 1px solid var(--studio-line, #45494a); border-radius: 8px; background: var(--studio-surface-2, #282e30); color: var(--studio-muted, #b8c3c0); font: 700 1.2rem sans-serif; cursor: pointer; }
+.set-log-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.1rem; }
+.set-log-actions button { min-height: 42px; padding: .5rem .85rem; border: 1px solid var(--studio-line, #45494a); border-radius: 9px; background: var(--studio-surface-2, #282e30); color: var(--studio-text, #fff); font: 700 .8rem var(--studio-body, sans-serif); cursor: pointer; }
+.set-log-actions button[type="submit"] { background: var(--studio-accent, #f8b766); border-color: var(--studio-accent, #f8b766); color: var(--studio-deep, #15191a); }
+.set-log-actions button:disabled { opacity: .6; cursor: wait; }
+.set-log-notice { min-height: 1rem; margin: .75rem 0 0; color: var(--studio-muted, #b8c3c0); font-size: .78rem; }
+.set-log-dialog button:hover { border-color: var(--studio-accent, #f8b766); }
+.set-log-dialog button:focus-visible, .set-log-dialog input:focus-visible { outline: 2px solid var(--studio-accent, #f8b766); outline-offset: 2px; }
+@media (max-width: 600px) {
+  .plan-page .progress-exercise { grid-template-columns: 38px repeat(2, minmax(0, 1fr)); gap: .5rem .65rem; }
+  .plan-page .progress-exercise-copy { grid-column: 2 / -1; }
+  .plan-page .progress-exercise-utilities { grid-column: 2 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; justify-self: stretch; width: 100%; }
+  .plan-page .progress-exercise-utilities .set-log, .plan-page .progress-exercise-utilities .set-log-trigger, .plan-page .progress-exercise-utilities .exercise-how-to { width: 100%; }
+  .plan-page .progress-exercise-utilities .exercise-how-to { grid-column: auto; grid-row: auto; justify-self: stretch; }
+  .plan-page .progress-exercise-utilities .set-log-trigger, .plan-page .progress-exercise-utilities .exercise-how-to,
+  .plan-page .progress-exercise-actions button, .plan-page .progress-exercise > .progress-undo {
+    min-height: 44px; box-sizing: border-box; padding: .5rem .6rem !important; border-radius: 10px; font-size: .78rem !important;
+  }
+  .plan-page .progress-exercise-actions { display: contents !important; }
+  .plan-page .progress-exercise-actions .action-done { grid-column: 2; grid-row: 3; }
+  .plan-page .progress-exercise-actions .action-skip { grid-column: 3; grid-row: 3; }
+  .plan-page .progress-exercise-actions .action-change { grid-column: 2; grid-row: 4; }
+  .plan-page .progress-exercise:not(:has(> .progress-undo)) .progress-exercise-actions .action-change { grid-column: 2 / -1; }
+  .plan-page .progress-exercise > .progress-undo { grid-column: 3; grid-row: 4; justify-self: stretch; width: 100%; }
+  .set-log-overlay { padding: .6rem; }
+  .set-log-dialog { max-height: 90vh; border-radius: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .set-log-overlay, .set-log-dialog { animation: none !important; transition: none !important; } }

@@ -1,0 +1,72 @@
+.mobile-nav-toggle { display: none; }
+
+@media (min-width: 1200px) {
+  .plan-page > header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+  .plan-page > header .brand { grid-column: 1; justify-self: start; }
+  .plan-page > header .app-tabs {
+    grid-column: 2;
+    justify-self: center;
+    margin: 0 !important;
+  }
+  .plan-page > header nav { grid-column: 3; justify-self: end; }
+}
+
+@media (max-width: 700px) {
+  .plan-page > header .mobile-nav-toggle {
+    display: inline-flex;
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #ffffff30;
+    border-radius: 9px;
+    background: #222729;
+    color: #f5f3ed;
+    font: 700 .83rem var(--studio-body);
+  }
+  .mobile-nav-toggle svg { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 2; }
+  .plan-page > header .mobile-nav-toggle[aria-expanded="true"] { border-color: var(--studio-accent); color: var(--studio-accent); }
+  .plan-page > header .mobile-nav-toggle:focus-visible { outline: 2px solid var(--studio-accent); outline-offset: 3px; }
+  .plan-page > header .app-tabs {
+    display: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    margin: .45rem 0 0 !important;
+    padding: .5rem !important;
+    overflow: visible;
+    border-radius: 12px !important;
+  }
+  .plan-page > header .app-tabs.mobile-nav-open {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .4rem !important;
+  }
+  .plan-page > header .app-tabs button {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: .65rem .5rem !important;
+    border-radius: 8px !important;
+    background: #2a2e30 !important;
+    color: #e0e3e1 !important;
+    text-align: center;
+    white-space: normal;
+  }
+  .plan-page > header .app-tabs button.active {
+    background: var(--studio-accent) !important;
+    color: #191b1c !important;
+  }
+  .plan-page > header .app-tabs button:last-child { grid-column: 1 / -1; }
+}

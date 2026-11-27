@@ -1,0 +1,20 @@
+# Moving SetSaathi to its dedicated accounts
+
+The source code can stay in the owner's personal GitHub repository. Connect that repository directly to the dedicated SetSaathi Cloudflare account; a second GitHub account or mirror is unnecessary. Cloudflare should build `main` with `npm run build` and deploy with `npx wrangler deploy`.
+
+This is a historical runbook for moving between Cloudflare accounts. The current live Worker is `app` at `app.setsaathi.workers.dev`; check the current Cloudflare account and D1 database before using these steps for another move.
+
+## Before connecting the new deployment
+
+1. Create and sign in to the dedicated Cloudflare, Brevo, and OpenRouter accounts. Give Cloudflare's GitHub app access to the personal SetSaathi repository only. If the personal GitHub connection is still installed for the old Cloudflare account, review that installation before connecting the new account.
+2. Keep the old site available while preparing the new one. Take a final source D1 export during a short period with no new member writes, so the copy includes the latest accounts, memberships, gym information, attendance, plans, and workout history.
+3. While authenticated to the **old** Cloudflare account, run `npx wrangler d1 export setsaathi --remote --output .migration/source.sql`. The `.migration/` directory is ignored by Git. This file contains private member data and password hashes. Do not upload it to GitHub, paste it into chat, or put it in the new repository.
+4. While authenticated to the **new** Cloudflare account, import the full export into the already-created empty D1 database with `npx wrangler d1 execute setsaathi --remote --file .migration/source.sql`. Do not run the schema migrations before importing the full export into the empty database.
+5. Check `d1_migrations` and apply any newer repository migrations with `npx wrangler d1 migrations apply setsaathi --remote`. Compare row counts in key tables (`users`, `membership_events`, `gym_attendance`, `workout_plans`, `daily_workout_plans`, `workout_events`, `workout_progress`, `body_measurements`) between the old and new databases. Stop if counts differ unexpectedly.
+6. Configure the new Worker secrets through Cloudflare's **Settings → Variables and Secrets** or `npx wrangler secret put NAME`: `SECRET_KEY` (new random value), `INITIAL_ADMIN_EMAIL`, `INITIAL_ADMIN_MOBILE`, `INITIAL_ADMIN_PASSWORD`, `INITIAL_ADMIN_USERNAME` if needed, `OPENROUTER_API_KEY` from the new OpenRouter account, `BREVO_API_KEY` from the new Brevo account, and `BREVO_SENDER_EMAIL` set to a sender verified in the new Brevo account. `BREVO_SENDER_NAME` is optional. Set `SITE_URL` to the final public URL if used. Never place secret values in `wrangler.toml` or Git.
+7. Deploy from the personal GitHub repository to the new Cloudflare account. Test member and admin sign-in with migrated accounts; verify memberships, plans, workouts, AI Coach, and password-reset email. A new `SECRET_KEY` means members sign in again. Existing D1 password hashes remain usable.
+8. Only after the new deployment and copied data pass those checks, direct users to the new URL and retire the old deployment. If the old site receives writes after the final export, repeat the export/import before cutover or reconcile those writes.
+
+The OpenRouter and Brevo keys are account-specific. Create new keys in the dedicated accounts; do not copy keys from the old accounts. If the personal GitHub repository has an older commit containing a previously exposed key, deleting a file in a newer commit does not remove it from Git history. The exposed key was revoked; keep any future keys out of Git entirely.
+
+Cloudflare references: [D1 export and execute](https://developers.cloudflare.com/d1/best-practices/import-export-data/), [D1 migrations](https://developers.cloudflare.com/d1/wrangler-commands/), [Worker Git integration](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/), [Worker secrets](https://developers.cloudflare.com/workers/configuration/secrets/).

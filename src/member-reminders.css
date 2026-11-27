@@ -1,0 +1,7 @@
+.member-reminder { position: fixed; z-index: 30; right: 1.25rem; bottom: 1.25rem; display: flex; justify-content: space-between; gap: 1rem; width: min(420px, calc(100vw - 2rem)); padding: 1rem 1.1rem; border: 1px solid #f8b45f85; border-radius: 14px; background: #1b1f21; color: #f5f6f3; box-shadow: 0 16px 48px #0009; font-family: "DM Sans", system-ui, sans-serif; }
+.member-reminder strong { color: #f8b45f; }
+.member-reminder p { margin: .35rem 0 0; line-height: 1.45; font-size: .88rem; }
+.member-reminder button { align-self: flex-start; display: grid; place-items: center; flex: none; width: 36px; height: 36px; border: 1px solid #ffffff3b; border-radius: 50%; background: #292f31; color: #fff; font-size: 1.5rem; cursor: pointer; }
+.member-reminder button:hover { background: #3c4548; }
+.member-reminder button:focus-visible { outline: 2px solid #f8b45f; outline-offset: 2px; }
+@media (max-width: 600px) { .member-reminder { right: 1rem; bottom: 1rem; } }

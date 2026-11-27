@@ -1,0 +1,294 @@
+/* Final presentation layer. Keep feature styles above this import. */
+:root {
+  --ui-bg: #071624;
+  --ui-surface: #10293c;
+  --ui-surface-raised: #18374c;
+  --ui-surface-deep: #0a2031;
+  --ui-border: #9fc4d12b;
+  --ui-text: #f7f7f1;
+  --ui-muted: #a9c0cc;
+  --ui-accent: #ffba68;
+  --ui-radius: 20px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--ui-bg); -webkit-font-smoothing: antialiased; }
+button { transition: background-color .18s ease, color .18s ease, border-color .18s ease, opacity .18s ease; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+::selection { background: #ffba68a6; color: #071624; }
+
+.plan-page {
+  padding-inline: clamp(1rem, 4.5vw, 5.5rem);
+  background: radial-gradient(ellipse 65% 32% at 95% 0%, #18445a6b, transparent 75%), var(--ui-bg);
+}
+.plan-page > header { gap: 1rem; }
+.plan-page .brand b { letter-spacing: -.045em; }
+.plan-page .mark { box-shadow: inset 0 1px #ffffff18, 0 8px 24px #020d1b55; }
+.app-tabs {
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem;
+  border-radius: 999px;
+  box-shadow: inset 0 1px #ffffff12;
+}
+.app-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: .55rem .9rem !important;
+  border-radius: 999px;
+  color: #b8cbd4;
+  line-height: 1 !important;
+}
+.app-tabs button.active,
+.app-tabs button.active:hover {
+  background: var(--ui-accent) !important;
+  color: #071624 !important;
+  box-shadow: 0 3px 12px #0002;
+}
+.app-tabs button:not(.active):hover {
+  background: #ffffff17 !important;
+  color: var(--ui-text) !important;
+  box-shadow: inset 0 0 0 1px #ffffff24;
+}
+@media (hover: hover) and (pointer: fine) {
+  .app-tabs button:hover { transform: none; }
+}
+.plan-page :is(.plan-hero h1, .member-welcome h1) { letter-spacing: -.055em; line-height: 1.08; }
+.plan-page .eyebrow { letter-spacing: .14em; }
+
+.body-tracker, .dashboard-summary > article, .log-grid > article,
+.gym-equipment-section, .plan-editor, .progress-overview, .progress-exercise,
+.progress-history-grid article, .library-card, .coach-messages {
+  border-color: var(--ui-border);
+  box-shadow: inset 0 1px #ffffff0a, 0 12px 32px #020d1b24;
+}
+.side-stack > .membership-card, .body-tracker, .dashboard-summary > article {
+  width: 100%;
+  border-radius: 20px;
+}
+.side-stack > .membership-card, .body-tracker, .dashboard-summary > article {
+  box-shadow: inset 0 1px #ffffff16, 0 12px 30px #020d1b26;
+}
+@media (hover: hover) and (pointer: fine) {
+  .side-stack > .membership-card:hover,
+  .body-tracker:hover,
+  .dashboard-summary > article:hover {
+    transform: translateY(-3px);
+    border-color: #ffffff45;
+    box-shadow: inset 0 1px #ffffff20, 0 18px 36px #020d1b55;
+  }
+}
+.membership-edit-form { margin-top: 1.5rem; padding-top: 1.35rem; border-top-color: #ffffff36; }
+.membership-edit-form h4 { margin-bottom: 1rem; font-size: 1.05rem; }
+.membership-edit-fields { gap: 1rem; }
+.membership-edit-form label { display: grid; gap: .42rem; font-size: .75rem; font-weight: 700; }
+.membership-edit-form input,
+.membership-edit-form select,
+.membership-form input,
+.membership-form select,
+.membership-edit-form .membership-plan-select,
+.membership-form .membership-plan-select {
+  width: 100%;
+  min-height: 48px;
+  padding: .68rem .85rem;
+  border: 1px solid #ffffff61;
+  border-radius: 10px;
+  background: #082c2c80;
+  color: #fff;
+  color-scheme: dark;
+}
+.membership-edit-form input:focus,
+.membership-edit-form select:focus { border-color: #ffd090; outline: 2px solid #ffd09066; outline-offset: 2px; }
+.membership-edit-form select option,
+.membership-form select option { background: #103a38; color: #fff; }
+.membership-edit-form input::placeholder { color: #c6dbd4b8; }
+.membership-expiry-hint { color: #dcf0e8; }
+.membership-edit-actions { margin-top: 1.15rem; }
+.membership-edit-actions button { min-width: 140px; min-height: 44px; }
+.membership-edit-actions .membership-edit-cancel { background: #ffffff12; }
+.body-tracker-stats article { min-height: 108px; align-content: center; }
+.body-tracker-stats .body-bmi-card { align-content: center; }
+.weekly-panel .week-boxes b {
+  min-height: 100px;
+  border: 1px solid #ffffff1d;
+  border-radius: 12px;
+  background: #ffffff0a;
+  box-shadow: inset 0 1px #ffffff0b;
+}
+.weekly-panel .week-boxes b.today { outline: none; border-color: #ffba6899; background: #ffba6814; }
+.weekly-panel .week-boxes b.rest { background: #60799148; color: #d9e5ec; }
+.weekly-panel .week-boxes b.completed { background: #177c5445; color: #a2f3ca; }
+.weekly-panel .week-boxes b.skipped { background: #a83b4140; color: #ffc0bd; }
+.dashboard-summary > article, .log-grid > article, .progress-overview,
+.progress-exercise, .progress-history-grid article, .library-card, .coach-messages {
+  background: linear-gradient(145deg, #163247, #10283b 72%);
+}
+.body-tracker, .gym-equipment-section, .plan-editor {
+  background: linear-gradient(145deg, #163348, #10283b 72%);
+}
+.dashboard-summary > article, .log-grid > article, .body-tracker,
+.gym-equipment-section, .plan-editor, .progress-overview {
+  padding: clamp(1.25rem, 2.4vw, 2rem);
+}
+.dashboard-summary { gap: 1.1rem; }
+.dashboard-summary > article { min-height: 150px; }
+.dashboard-workout-panel .today-checkin {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .7rem;
+  width: 100%;
+  margin-top: .45rem;
+}
+.dashboard-workout-panel .today-checkin button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  padding: .65rem .75rem;
+  border-radius: 12px;
+  font-size: .82rem;
+  font-weight: 800;
+  text-align: center;
+}
+.dashboard-workout-panel .today-checkin button[data-status="completed"] { border: 1px solid #3ec58a7a; background: #177c5425; color: #74e3ac; }
+.dashboard-workout-panel .today-checkin button[data-status="skipped"] { border: 1px solid #ed777777; background: #a83b4125; color: #ffaaa7; }
+.dashboard-workout-panel .today-checkin button[data-status="rest"] { border: 1px solid #ffc07870; background: #a76d2c23; color: #ffd092; }
+.dashboard-workout-panel .today-checkin button[data-status="completed"].selected { background: #16734d; color: #fff; }
+.dashboard-workout-panel .today-checkin button[data-status="skipped"].selected { background: #9d3037; color: #fff; }
+.dashboard-workout-panel .today-checkin button[data-status="rest"].selected { background: #73552d; color: #fff; }
+.monthly-panel .status-key {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+.monthly-panel .status-key b { justify-self: center; text-align: center; }
+.log-checkin-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); flex: 1; gap: .5rem; }
+.log-checkin-actions button { min-height: 42px; }
+.dashboard-summary h3, .log-grid h3 { font-size: clamp(1.4rem, 2vw, 2rem); }
+.dashboard-summary :is(.panel-body > span, .monthly-hint), .log-grid li {
+  color: #c1d1d9;
+  line-height: 1.6;
+}
+.body-tracker-stats article { background: #071e2e9c; border: 1px solid #ffffff0d; }
+.body-tracker-stats strong { font-size: 1.15rem; letter-spacing: -.03em; }
+
+/* Dashboard: let the membership, check-in and calendar each have a clear job. */
+.side-stack > .membership-card {
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border-color: #ffffff32;
+  box-shadow: inset 0 1px #ffffff1a;
+}
+.membership-card .membership-title h3 { max-width: 22ch; line-height: 1.05; }
+.membership-card .membership-message { margin-top: .75rem; color: #eefcf6; }
+.membership-card .membership-grid {
+  gap: .75rem;
+  margin-top: 1.65rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid #ffffff32;
+}
+.membership-card .membership-grid span { background: #031b1430; border-color: #ffffff25; }
+
+.body-tracker, .dashboard-summary > article {
+  background: #112b3e;
+  box-shadow: inset 0 1px #ffffff0c;
+}
+.body-tracker-heading { gap: 1.25rem; }
+.body-tracker-heading h2 { line-height: 1.08; }
+.body-tracker-stats { gap: .8rem; }
+.body-tracker-stats article {
+  min-height: 98px;
+  padding: 1rem;
+  background: #0b2132;
+  border: 1px solid #ffffff14;
+}
+.body-chart-wrap { border: 1px solid #ffffff12; }
+
+.dashboard-summary > .dashboard-workout-panel { gap: 1rem 1.5rem; }
+.dashboard-workout-panel .panel-body { gap: .9rem 1.5rem; }
+.dashboard-workout-panel .today-checkin { gap: .65rem; margin-top: .2rem; }
+.dashboard-workout-panel .today-checkin button {
+  min-height: 48px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .dashboard-workout-panel .today-checkin button:hover { transform: translateY(-2px); }
+}
+.dashboard-workout-panel .today-checkin button:focus-visible { outline: 2px solid #ffc17a; outline-offset: 3px; }
+.dashboard-workout-panel .today-attendance { padding: .45rem .8rem; font-weight: 700; }
+
+.weekly-panel .panel-body { margin-top: 1.15rem; }
+.weekly-panel .week-boxes { gap: .65rem; }
+.weekly-panel .week-boxes b {
+  min-height: 92px;
+  gap: .32rem;
+  background: #0c2334;
+  border-color: #ffffff18;
+  box-shadow: none;
+}
+.weekly-panel .week-boxes b.today { border-color: #f6b462; background: #f6b46212; }
+.weekly-panel .week-boxes .status-symbol { line-height: 1; }
+
+.dashboard-summary > .monthly-panel { gap: clamp(1.25rem, 3vw, 2.5rem); }
+.monthly-panel .monthly-summary { margin-top: 1.6rem; }
+.monthly-panel .panel-body { max-width: none; }
+.monthly-panel .month-boxes b {
+  min-height: 48px;
+  background: #0c2334;
+  border-color: #ffffff15;
+}
+.monthly-panel .month-boxes b.today { border-color: #f6b462; outline: none; background: #f6b46212; }
+.monthly-panel .status-key { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.monthly-panel .status-key b { justify-self: auto; }
+
+@media (max-width: 700px) {
+  .membership-card .membership-grid { margin-top: 1.25rem; }
+  .body-tracker-heading { align-items: start !important; }
+  .weekly-panel .week-boxes { gap: .25rem; }
+  .weekly-panel .week-boxes b { min-height: 72px; gap: .15rem; }
+  .monthly-panel .month-boxes b { min-height: 40px; }
+  .monthly-panel .status-key { justify-content: space-between; }
+}
+.library-card { overflow: hidden; }
+.library-card h3, .progress-exercise-copy h3 { letter-spacing: -.025em; }
+.library-controls :is(input, select), .coach-form input, .plan-editor-grid select {
+  border-color: #b8d0d333;
+  background: #092133;
+}
+.library-controls :is(input, select):hover, .coach-form input:hover, .plan-editor-grid select:hover {
+  border-color: #ffba6880;
+}
+.coach-message.assistant { background: #d8ebf00e; border: 1px solid #d8ebf013; }
+.coach-message.user { background: #ffba68; color: #102031; }
+.auth .card { box-shadow: 0 24px 70px #020d1b66, inset 0 1px #ffffff13; }
+.auth .submit, .coach-form .submit { background: var(--ui-accent); color: #071624; }
+.auth .submit:hover, .coach-form .submit:hover { background: #ffd092; }
+
+@media (max-width: 700px) {
+  .plan-page { padding-inline: 1rem; }
+  .plan-page > header { align-items: center; }
+  .app-tabs { max-width: 100%; }
+  .dashboard-summary > article, .log-grid > article, .body-tracker,
+  .gym-equipment-section, .plan-editor, .progress-overview { padding: 1.2rem; }
+  .dashboard-summary > article { min-height: 0; }
+  .dashboard-workout-panel .today-checkin { gap: .4rem; }
+  .dashboard-workout-panel .today-checkin button { min-height: 48px; padding: .5rem .25rem; font-size: .7rem; }
+  .monthly-panel .status-key { gap: .25rem; }
+  .monthly-panel .status-key b { font-size: .57rem; }
+  .log-checkin-actions { width: 100%; }
+  .weekly-panel .week-boxes b { min-height: 72px; }
+  .body-tracker-stats { gap: .55rem; }
+  .coach-message { max-width: 94%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  button { transition: none; }
+}

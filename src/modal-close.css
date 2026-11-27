@@ -1,0 +1,45 @@
+/* One close control for every dialog, independent of font metrics. */
+.modal-close-button,
+.admin-modal-head .modal-close-button {
+  appearance: none;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #456278;
+  border-radius: 50%;
+  background: #143047;
+  color: #fff;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+
+.modal-close-button:hover,
+.admin-modal-head .modal-close-button:hover {
+  border-color: #ffb052;
+  background: #21455c;
+  transform: scale(1.05);
+}
+
+.modal-close-button:focus-visible,
+.admin-modal-head .modal-close-button:focus-visible {
+  outline: 2px solid #ffb052;
+  outline-offset: 3px;
+}
+
+.modal-close-button svg,
+.admin-modal-head .modal-close-button svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+

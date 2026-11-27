@@ -1,0 +1,12 @@
+.workout-log { padding: 1.25rem 0 2rem; }
+.workout-log > h2 { margin: .2rem 0 1.3rem; color: #f7fafb; font: 600 clamp(2rem, 3vw, 2.8rem)/1.15 "Bricolage Grotesque", sans-serif; letter-spacing: -.035em; }
+.workout-log > p:last-child { color: #b8c9d1; }
+.log-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+.log-grid article { min-width: 0; padding: clamp(1.1rem, 2vw, 1.55rem); border: 1px solid #ffffff24; border-radius: 17px; background: #10283b; }
+.log-grid article:nth-child(2) { border-color: #f6b46266; background: #173145; }
+.log-grid p { margin: 0 0 .6rem; color: #f8b766; font: 600 .72rem "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+.log-grid h3 { margin: 0 0 1.1rem; color: #f7fafb; font: 600 1.4rem/1.22 "Bricolage Grotesque", sans-serif; letter-spacing: -.02em; }
+.log-grid ul { margin: 0; padding: 0; list-style: none; }
+.log-grid li { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; padding: .68rem 0; border-top: 1px solid #ffffff17; color: #eaf1f7; font-size: .86rem; line-height: 1.45; }
+.log-grid small { float: none; flex: none; color: #aec1cc; font-size: .74rem; text-align: right; }
+@media (max-width: 900px) { .log-grid { grid-template-columns: 1fr; } }

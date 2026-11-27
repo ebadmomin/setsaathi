@@ -1,0 +1,18 @@
+.workout-log-checkin { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; margin: 0 0 1.2rem; padding: 1.05rem 1.25rem; border: 1px solid #ffffff28; border-radius: 15px; background: #10283b; }
+.workout-log-checkin > div:first-child { display: grid; gap: .3rem; }
+.workout-log-checkin span { color: #b7c7d0; font: 600 .72rem "IBM Plex Mono", monospace; letter-spacing: .07em; }
+.workout-log-checkin strong { color: #fff; font: 700 1rem "DM Sans", sans-serif; }
+.log-checkin-actions { display: flex; gap: .55rem; }
+.log-checkin-actions button { border: 1px solid #ffffff35; border-radius: 9px; background: #ffffff0a; color: #e6eef2; padding: .72rem .9rem; font: 700 .83rem "DM Sans", sans-serif; cursor: pointer; transition: border-color .18s, background .18s, transform .18s; }
+.log-checkin-actions button:hover { transform: translateY(-1px); border-color: #ffffff80; background: #ffffff17; }
+.log-checkin-actions button:focus-visible { outline: 2px solid #f6b462; outline-offset: 3px; }
+.log-checkin-actions button[data-log-status="completed"].selected { background: #16734d; border-color: #2fc179; color: #fff; }
+.log-checkin-actions button[data-log-status="skipped"].selected { background: #9d3037; border-color: #ef6262; color: #fff; }
+.workout-log-checkin[data-status="completed"] { border-color: #38c88970; }
+.workout-log-checkin[data-status="skipped"] { border-color: #ef626270; }
+.workout-log-checkin[data-status="rest"] { border-color: #f6b46270; }
+.workout-log-checkin .log-checkin-status { width: fit-content; padding: .28rem .6rem; border-radius: 999px; background: #ffffff12; font-size: .75rem; }
+.workout-log-checkin[data-status="completed"] .log-checkin-status { background: #38c88922; color: #71e7ad; }
+.workout-log-checkin[data-status="skipped"] .log-checkin-status { background: #ef626222; color: #ff9898; }
+.workout-log-checkin[data-status="rest"] .log-checkin-status { background: #f6b46222; color: #ffca85; }
+@media (max-width: 700px) { .workout-log-checkin { align-items: flex-start; flex-direction: column; } .log-checkin-actions { width: 100%; } .log-checkin-actions button { flex: 1; } }

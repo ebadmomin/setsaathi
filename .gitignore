@@ -1,0 +1,28 @@
+# JavaScript
+node_modules/
+dist/
+.vite/
+.npm-cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local data and secrets
+.env
+.env.*
+!.env.example
+backend/setsaathi.db
+backend/test_setsaathi.db
+backend/test_*.db*
+backend/*preview*.db*
+
+# Worker local secrets and state
+.dev.vars
+.wrangler/
+.remote-compare/
+.vscode/
+
+# Private exports used only while moving Cloudflare accounts
+.migration/

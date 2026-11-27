@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">SetSaathi logo</title>
+  <desc id="desc">A coral and navy stylised S made from dumbbells, followed by the SetSaathi wordmark.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M130 43C106 22 57 22 40 48c-17 26 5 45 43 55 38 10 60 22 43 48-17 26-66 26-90 5" stroke="#101827" stroke-width="18"/>
+    <path d="M126 48l16-16M135 62l16-16M43 122l-16 16M52 136l-16 16" stroke="#ff5a5f" stroke-width="12"/>
+    <path d="M143 28v38M157 28v38M23 114v38M37 114v38" stroke="#ff5a5f" stroke-width="12"/>
+  </g>
+  <text x="194" y="104" fill="#101827" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700" letter-spacing="-3">Set<tspan fill="#ff5a5f">Saathi</tspan></text>
+  <text x="199" y="137" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing="4">MOVE WITH PURPOSE</text>
+</svg>

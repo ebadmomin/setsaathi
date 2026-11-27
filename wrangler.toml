@@ -1,0 +1,30 @@
+# One Worker serves the built Vite app (./dist) and the API (/api/*, /health).
+name = "app"
+main = "worker/src/index.ts"
+compatibility_date = "2026-11-23"
+
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*", "/health"]
+
+[vars]
+OPENROUTER_MODEL = "openrouter/free"
+ACCESS_TOKEN_MINUTES = "30"
+SITE_URL = "https://app.setsaathi.workers.dev"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "setsaathi"
+database_id = "1f6120bd-b274-4c3d-a79e-e64712dcbe38"
+migrations_dir = "migrations"
+
+# Secrets (never put in this file): SECRET_KEY, INITIAL_ADMIN_EMAIL, INITIAL_ADMIN_MOBILE,
+# INITIAL_ADMIN_PASSWORD, optional INITIAL_ADMIN_NAME/USERNAME, INITIAL_STAFF_PASSWORD,
+# optional INITIAL_STAFF_EMAIL/MOBILE, OPENROUTER_API_KEY,
+# BREVO_API_KEY, BREVO_SENDER_EMAIL, optional BREVO_SENDER_NAME.
+# Set with `npx wrangler secret put NAME`; locally copy them into .dev.vars.

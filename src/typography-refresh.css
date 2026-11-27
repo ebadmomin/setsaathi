@@ -1,0 +1,129 @@
+/* Type scale and contrast shared by every SetSaathi view. */
+:root {
+  --ui-muted: #c0d1d9;
+  --type-body: "DM Sans", system-ui, sans-serif;
+  --type-display: "Bricolage Grotesque", "DM Sans", sans-serif;
+  --type-label: "IBM Plex Mono", ui-monospace, monospace;
+}
+body, button, input, select, textarea { font-family: var(--type-body) !important; }
+body { font-size: 15px; line-height: 1.55; }
+h1, h2, h3, h4,
+.plan-page :is(.managed-plan-heading h2, .library-title h2, .progress-heading h2, .coach-heading h2, .workout-log > h2),
+.auth .card h2, .hero h1, .plan-hero h1,
+.membership-card .membership-title h3,
+.dashboard-summary h3, .log-grid h3,
+.progress-section-title h3, .plan-editor > h2,
+.exercise-detail h2, .exercise-how-to-modal h2 {
+  font-family: var(--type-display) !important;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+.plan-page :is(.member-welcome h1, .managed-plan-heading h2, .library-title h2, .progress-heading h2, .coach-heading h2, .workout-log > h2, .plan-editor > h2) {
+  line-height: 1.08;
+}
+.plan-page .eyebrow, .dashboard-summary .panel-heading p,
+.plan-builder-eyebrow, .body-tracker-stats small,
+.progress-exercise-number, .exercise-meta small,
+.library-card-visual span, .membership-grid small,
+.log-grid > article > p {
+  font-family: var(--type-label) !important;
+  letter-spacing: .07em;
+}
+.plan-page .eyebrow, .dashboard-summary .panel-heading p,
+.plan-builder-eyebrow { font-size: .72rem !important; }
+.app-tabs button { font-size: .83rem !important; font-weight: 700 !important; }
+.plan-page :is(.plan-builder-intro, .library-title span, .progress-heading > div > span, .coach-heading > span),
+.body-tracker-heading span, .dashboard-summary :is(.panel-body > span, .monthly-hint),
+.gym-equipment-section p { color: var(--ui-muted) !important; font-size: .92rem !important; line-height: 1.6; }
+.body-tracker-stats small, .membership-grid small, .progress-stats span,
+.weekly-panel .week-boxes small, .monthly-panel .month-boxes small {
+  color: #b3c9d2;
+  font-size: .72rem !important;
+}
+.body-tracker-stats strong, .membership-grid span { font-size: 1rem; }
+.body-chart-start :is(small, p), .monthly-counts span,
+.dashboard-summary .status-key b, .monthly-panel .monthly-summary span { font-size: .78rem !important; }
+.weekly-panel .week-boxes .day-status-label,
+.weekly-panel .week-boxes .status-symbol { opacity: 1; }
+.dashboard-summary .panel-heading p { color: #ffc27b; }
+.dashboard-summary h3 { line-height: 1.1; }
+.membership-card .membership-message { font-size: .9rem; line-height: 1.5; }
+.membership-card .membership-grid small { color: #d0eee3; }
+.dashboard-workout-panel .today-attendance { font-size: .75rem; }
+.weekly-panel .week-boxes span { font-size: .88rem; font-weight: 800; }
+.weekly-panel .week-boxes .day-status-label { font-size: .7rem; }
+.monthly-panel .month-boxes small { color: #c8d8df; }
+
+.plan-editor-grid label, .builder-equipment-panel p,
+.builder-equipment-list label { color: #d5e3e9; font-size: .84rem !important; }
+.builder-preview-copy span, .builder-week-copy span,
+.builder-phase-counts span, .builder-week-copy em { color: #c0d1d9; font-size: .75rem !important; }
+.builder-equipment-list label { min-height: 38px; }
+.plan-editor-grid select { font-size: .92rem; }
+.plan-today-message { font-size: .84rem; }
+
+.log-grid .log-day-date, .log-grid .log-actual-summary,
+.log-grid li small, .log-grid .actual-status,
+.workout-log-checkin span, .workout-log-checkin strong {
+  color: #c4d5de;
+  font-size: .82rem !important;
+}
+.log-grid li { font-size: .9rem; }
+.log-grid .log-actual-summary strong { font-size: .75rem !important; }
+
+.library-muscles button { color: #c4d5de; font-size: .85rem !important; }
+.library-card h3 { font-size: 1.05rem !important; line-height: 1.25; }
+.library-card p { color: #c2d2da; font-size: .82rem !important; line-height: 1.55; }
+.library-card-tags span, .library-card-visual span,
+.library-card > small, .library-title > .library-count { font-size: .75rem !important; }
+.exercise-meta span, .exercise-detail-copy p { color: #d0dfe6; font-size: .88rem !important; line-height: 1.6; }
+.exercise-detail-copy h3 { color: #fff; font-size: 1rem !important; }
+.exercise-meta small { color: #ffd08b; font-size: .71rem !important; }
+.exercise-how-to-copy p { color: #d0e2ec; font-size: .94rem; }
+
+.progress-heading > div > span, .progress-score span,
+.progress-section-title > span, .progress-exercise-copy :is(small, p),
+.progress-status, .progress-history-grid :is(time, span),
+.progress-change-panel small, .progress-replace label {
+  color: #bdcfda;
+  font-size: .8rem !important;
+  line-height: 1.5;
+}
+.progress-exercise-copy h3 { font-size: 1rem !important; }
+.progress-exercise-actions button { font-size: .79rem !important; min-height: 40px; }
+.progress-exercise-actions .progress-undo { font-size: .74rem !important; }
+.progress-stats b { font-size: 1.2rem; }
+.progress-finish:disabled { color: #b2c7d2; }
+.progress-history-grid strong { font-size: .92rem; }
+
+/* The card artwork names the target muscle instead of showing an arbitrary initial. */
+.library-card .library-card-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .35rem;
+  padding: 1rem 1.15rem;
+}
+.library-card .library-card-visual span {
+  color: #b9d1dc;
+  font-size: .7rem !important;
+  letter-spacing: .11em;
+}
+.library-card .library-card-visual b {
+  color: #ffba68;
+  font: 700 clamp(1.35rem, 2vw, 2rem)/1.1 var(--type-display);
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+
+.coach-message p { color: inherit; font-size: .94rem !important; }
+.coach-provider, .coach-sources button, .coach-clear { color: #c4d4dc; font-size: .8rem !important; }
+.coach-form input { font-size: .94rem; }
+
+@media (max-width: 700px) {
+  body { font-size: 14px; }
+  .app-tabs button { font-size: .79rem !important; }
+  .progress-exercise-actions button { font-size: .72rem !important; }
+  .library-card p { height: auto; max-height: 4.7em; }
+}

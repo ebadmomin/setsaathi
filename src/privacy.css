@@ -1,0 +1,68 @@
+.site-privacy-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+  width: 100%;
+  padding: 1.6rem 1rem;
+  color: #aeb8bf;
+  font: 600 .78rem Manrope, sans-serif;
+  text-align: center;
+}
+
+.site-privacy-footer .footer-copyright { white-space: nowrap; }
+.site-privacy-footer nav { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0 .45rem; }
+.site-privacy-footer .footer-separator { color: #74817e; user-select: none; }
+.site-privacy-footer button, .site-privacy-footer a {
+  border: 0;
+  background: transparent;
+  color: #d0d8dc;
+  padding: .35rem .1rem;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.site-privacy-footer button:hover, .site-privacy-footer a:hover { color: #f6b462; }
+.site-privacy-footer :is(button, a):focus-visible { outline: 2px solid #f6b462; outline-offset: 3px; border-radius: 3px; }
+.site-privacy-footer .footer-contact { color: #f6b462; }
+
+.privacy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: #05090dec;
+  backdrop-filter: blur(7px);
+}
+
+.privacy-dialog {
+  position: relative;
+  width: min(700px, 100%);
+  max-height: min(88vh, 800px);
+  overflow: auto;
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+  border: 1px solid #ffffff25;
+  border-radius: 18px;
+  background: #1b2023;
+  color: #f5f4ef;
+  box-shadow: 0 24px 70px #000a;
+}
+
+.privacy-dialog .eyebrow { margin: 0 3.5rem .5rem 0; color: #f6b462 !important; font: 600 .76rem/1.4 "IBM Plex Mono", monospace !important; letter-spacing: .07em; }
+.privacy-dialog h2 { margin: 0 3.5rem 1.4rem 0; color: #fff; font: 700 clamp(1.8rem, 4vw, 2.4rem)/1.2 "DM Sans", system-ui, sans-serif !important; letter-spacing: -.035em !important; }
+.privacy-content { display: grid; gap: .5rem; }
+.privacy-dialog h3 { margin: 1.15rem 0 0; color: #f6b462; font: 600 1rem/1.45 "DM Sans", system-ui, sans-serif !important; letter-spacing: 0 !important; }
+.privacy-dialog p { max-width: 64ch; margin: 0; color: #e0e4e2 !important; font: 400 .96rem/1.75 "DM Sans", system-ui, sans-serif !important; letter-spacing: 0 !important; }
+.privacy-dialog a { color: #ffc77e; text-underline-offset: 3px; }
+.privacy-dialog a:focus-visible { outline: 2px solid #f6b462; outline-offset: 2px; }
+.privacy-dialog .policy-updated { margin-top: 1rem; color: #aeb8bf !important; font-size: .8rem !important; }
+.privacy-dialog .privacy-close { position: absolute; top: 1rem; right: 1rem; }
+
+@media (max-width: 600px) {
+  .site-privacy-footer nav { gap: 0 .3rem; }
+  .privacy-overlay { padding: .65rem; }
+  .privacy-dialog { max-height: 92vh; }
+}

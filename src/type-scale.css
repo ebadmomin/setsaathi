@@ -1,0 +1,107 @@
+/* One restrained type and navigation scale for member and admin surfaces. */
+:root {
+  --display-title-size: clamp(2.9rem, 5vw, 4.8rem);
+  --page-title-size: clamp(2.15rem, 3.5vw, 3.55rem);
+  --section-title-size: clamp(1.55rem, 2.15vw, 2.1rem);
+  --card-title-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  --body-copy-size: .9375rem;
+  --control-copy-size: .8125rem;
+}
+
+.plan-page :is(.library-title h2, .managed-plan-heading h2, .progress-heading h2,
+  .plan-editor > h2, .gym-equipment-name, .workout-log .log-header h2),
+.admin-page :is(.admin-page-heading h1, .admin-setup h1, .admin-hero h2) {
+  font-size: var(--page-title-size) !important;
+  line-height: 1.04 !important;
+}
+.plan-page :is(.dashboard-summary .panel-heading h3, .body-tracker h2,
+  .gym-equipment-summary h3, .progress-section-title h3),
+.admin-page :is(.admin-panel h2, .admin-modal-head h2) {
+  font-size: var(--section-title-size) !important;
+  line-height: 1.12 !important;
+}
+.plan-page .member-welcome h2,
+.auth .hero h1 {
+  font-size: var(--display-title-size) !important;
+  line-height: .94 !important;
+}
+.plan-page :is(.coach-heading h2, .progress-empty-state h2) {
+  font-size: clamp(2.65rem, 4.5vw, 4.5rem) !important;
+  line-height: .95 !important;
+}
+.auth .card h2 { font-size: clamp(2.25rem, 3.2vw, 3.1rem) !important; }
+
+.plan-page :is(.log-grid h3, .progress-exercise h3, .library-card h3,
+  .managed-day h3, .plan-type-card strong),
+.admin-page :is(.admin-panel h3, .admin-quick-panel h3) {
+  font-size: var(--card-title-size) !important;
+  line-height: 1.2 !important;
+}
+.plan-page :is(.managed-plan-heading > p, .progress-heading > div > span,
+  .library-title > div > span, .coach-heading > div > span,
+  .workout-log > p, .gym-equipment-section > p),
+.admin-page :is(.admin-page-heading p, .admin-setup > p, .admin-hero p) {
+  font-size: var(--body-copy-size) !important;
+  line-height: 1.5 !important;
+}
+.plan-page :is(.progress-exercise-actions button, .managed-phase button,
+  .plan-editor button, .gym-equipment-section button),
+.admin-page :is(.admin-heading-actions button, .admin-topbar-actions button,
+  .admin-roster td button) {
+  font-size: var(--control-copy-size) !important;
+}
+
+.plan-page .app-tabs { padding: .25rem !important; gap: .1rem !important; }
+.plan-page .app-tabs button {
+  min-height: 38px;
+  padding: .5rem .72rem !important;
+  font-size: .78rem !important;
+}
+.admin-page .admin-nav button {
+  min-height: 42px;
+  padding: .62rem .78rem;
+  font-size: .8rem;
+}
+.admin-page .admin-nav button span { font-size: 1rem; }
+
+.plan-page .membership-card .membership-title h3 {
+  max-width: none;
+  font-size: clamp(1.8rem, 2.5vw, 2.55rem) !important;
+  line-height: 1.06 !important;
+}
+.plan-page .plan-type-card {
+  min-height: 112px;
+  align-content: space-between;
+  gap: .65rem;
+  padding: 1rem 1.15rem;
+}
+.plan-page .plan-type-card small { font-size: .84rem; line-height: 1.45; }
+.admin-page .admin-account-roster th:nth-child(2),
+.admin-page .admin-account-roster td:nth-child(2) { min-width: 260px; }
+.admin-page .admin-account-roster td:nth-child(2) .admin-account-cell strong {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --display-title-size: clamp(2.65rem, 10vw, 3.35rem);
+    --page-title-size: clamp(2rem, 8vw, 2.7rem);
+    --section-title-size: clamp(1.45rem, 5vw, 1.8rem);
+    --card-title-size: clamp(1.05rem, 4vw, 1.2rem);
+  }
+  .plan-page :is(.coach-heading h2, .progress-empty-state h2) {
+    font-size: clamp(2.45rem, 9vw, 3.3rem) !important;
+  }
+  .plan-page .membership-card .membership-title h3 {
+    max-width: 18ch;
+    font-size: clamp(1.7rem, 7vw, 2rem) !important;
+  }
+  .plan-page .plan-type-card { min-height: 104px; padding: .9rem 1rem; }
+  .plan-page > header .app-tabs button {
+    min-height: 42px;
+    padding: .55rem .45rem !important;
+    font-size: .78rem !important;
+  }
+  .admin-page .admin-nav button { min-height: 40px; padding: .5rem .65rem; }
+}

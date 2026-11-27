@@ -1,0 +1,252 @@
+/* SetSaathi's neutral material system. Status colors remain semantic. */
+:root {
+  --studio-bg: #0d0f10;
+  --studio-surface: #1a1d1f;
+  --studio-surface-2: #24282a;
+  --studio-deep: #121516;
+  --studio-line: #ffffff1e;
+  --studio-text: #f5f3ed;
+  --studio-muted: #adb3b4;
+  --studio-accent: #f4b566;
+  --status-valid: #43bd8c;
+  --status-expiring: #f1a85b;
+  --status-expired: #ed6969;
+}
+
+html, body, #root { background: var(--studio-bg) !important; color: var(--studio-text); }
+.plan-page, .admin-page { background-color: var(--studio-bg) !important; }
+.plan-page::before, .site-privacy-footer, .auth, .admin-page {
+  background-image: radial-gradient(#b8bec314 1px, transparent 1px) !important;
+}
+.plan-page::after, .site-privacy-footer::before {
+  background-image: radial-gradient(#c5cacd38 1px, transparent 1px) !important;
+}
+.site-privacy-footer { background-color: var(--studio-bg) !important; }
+.hero {
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  background: #131617 !important;
+  text-align: center;
+}
+.hero .auth-hero-logo {
+  align-self: center;
+  margin: 0;
+}
+.hero h1 {
+  width: 100%;
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.6rem, 6.4vw, 7rem) !important;
+  line-height: .88 !important;
+  overflow-wrap: normal;
+}
+.hero::before { color: #ffffff08; }
+.auth { background-color: var(--studio-bg) !important; }
+.auth .card { background: #1b1f20 !important; border-color: var(--studio-line) !important; }
+.auth .admin-link {
+  display: block;
+  justify-self: center;
+  margin: -.35rem 0 0;
+  padding: .35rem .5rem;
+  color: var(--studio-muted) !important;
+  text-decoration: none;
+}
+.auth .admin-link:hover { color: var(--studio-accent) !important; text-decoration: underline; }
+
+/* Navigation and everyday panels use neutral layers. */
+.app-tabs { background: #1d2123 !important; border-color: #ffffff24 !important; }
+.app-tabs button:not(.active) { color: #bfc4c5 !important; }
+.app-tabs button.active { color: #191b1c !important; }
+.plan-page nav .profile-avatar { color: #191b1c !important; }
+.profile-menu, .profile-panel, .exercise-how-to-modal, .exercise-detail,
+.privacy-dialog, .admin-modal { background: #1b1f20 !important; border-color: #ffffff26 !important; }
+.plan-page nav .account-menu {
+  width: 190px;
+  padding: .4rem;
+  border: 1px solid #ffffff26;
+  border-radius: 12px;
+  background: #202426 !important;
+  box-shadow: 0 20px 44px #0009 !important;
+}
+.plan-page nav .account-menu button {
+  min-height: 42px;
+  padding: .65rem .8rem;
+  border-radius: 8px;
+  color: var(--studio-text) !important;
+  font: 650 .8rem var(--studio-body) !important;
+  transition: background .16s ease, color .16s ease;
+}
+.plan-page nav .account-menu button + button {
+  border-top: 1px solid #ffffff20;
+  border-radius: 8px;
+}
+.plan-page nav .account-menu button:hover,
+.plan-page nav .account-menu button:focus-visible {
+  background: #303638 !important;
+  color: var(--studio-accent) !important;
+}
+.plan-page nav .account-menu .menu-signout { color: #e7aaa4 !important; }
+.plan-page nav .account-menu .menu-signout:hover,
+.plan-page nav .account-menu .menu-signout:focus-visible {
+  background: #4a2b2a !important;
+  color: #ffe3e0 !important;
+}
+.profile-overlay { background: #050607c9 !important; }
+.profile-panel {
+  width: min(100%, 520px) !important;
+  max-height: min(90dvh, 760px);
+  overflow-y: auto;
+  padding: clamp(1.25rem, 3vw, 2rem) !important;
+  box-shadow: 0 30px 80px #000b !important;
+}
+.profile-panel [hidden] { display: none !important; }
+.profile-panel > .eyebrow { margin: 0 0 .5rem; color: var(--studio-accent) !important; }
+.profile-panel h2 { margin: 0 3rem 1.5rem 0; color: #fffdf7 !important; font: 800 clamp(1.9rem, 5vw, 2.35rem)/1.12 var(--studio-body) !important; letter-spacing: -.035em !important; text-transform: none; }
+.profile-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; padding: .3rem; border: 1px solid var(--studio-line); border-radius: 11px; background: #141718; }
+.profile-tabs button { min-height: 42px; padding: .6rem .35rem; border: 0; border-radius: 8px; background: transparent; color: #e9e9e5 !important; font: 750 .82rem var(--studio-body) !important; cursor: pointer; }
+.profile-tabs button[aria-selected="true"] { background: var(--studio-accent); color: #1b1d1e !important; }
+.profile-tabs button:not([aria-selected="true"]):hover { background: #292e30; color: var(--studio-text); }
+.profile-tabs button:focus-visible { outline: 2px solid var(--studio-accent); outline-offset: 2px; }
+.profile-section { padding-top: 1.5rem; }
+.profile-identity { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; border: 1px solid var(--studio-line); border-radius: 12px; background: #24282a; }
+.profile-initials { display: grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 50%; background: var(--studio-accent); color: #1b1d1e; font: 800 1rem var(--studio-body); }
+.profile-identity > div { display: grid; gap: .2rem; min-width: 0; }
+.profile-name { color: #fffdf7 !important; font: 800 1.22rem/1.25 var(--studio-body) !important; letter-spacing: -.025em; }
+.profile-handle { color: #d3d8d7 !important; font-size: .9rem; font-weight: 600; overflow-wrap: anywhere; }
+.profile-overview-note, .profile-section-intro { margin: 1rem 0 0; color: #d3d8d7 !important; font-size: .9rem; line-height: 1.5; }
+.profile-section-intro { margin: 0 0 1.2rem; }
+.profile-panel form { gap: .9rem; }
+.profile-panel form label { color: var(--studio-text); }
+.profile-panel form input { background: #141718 !important; border: 1px solid #ffffff32 !important; color: var(--studio-text) !important; }
+.profile-panel form .submit { margin-top: .3rem; background: var(--studio-accent) !important; color: #1b1d1e !important; }
+.profile-message, .profile-password-message { min-height: 1.2em; margin: 0; color: #f0aaa4; font-size: .8rem; }
+.profile-close { top: 1.2rem; right: 1.2rem; }
+.modal-close-button, .admin-modal-head .modal-close-button { background: #303537 !important; color: #f5f3ed !important; }
+
+.dashboard-summary > article:nth-child(even),
+.dashboard-summary > .dashboard-workout-panel,
+.body-tracker, .gym-equipment-section, .plan-editor,
+.progress-overview, .progress-exercise, .progress-history-grid article,
+.managed-plan-shell, .managed-day, .managed-phase, .managed-day-content,
+.plan-type-card, .progress-change-panel, .log-grid > article,
+.exercise-library-view .library-card, .coach-messages {
+  background: var(--studio-surface) !important;
+  border-color: var(--studio-line) !important;
+}
+.body-tracker, .gym-equipment-section,
+.dashboard-summary > .weekly-panel,
+.dashboard-summary > .monthly-panel, .plan-editor {
+  background: transparent !important;
+}
+.body-tracker-stats article, .membership-card .membership-grid span,
+.managed-plan-summary span, .builder-phase-counts span, .progress-stats > div,
+.body-chart-wrap, .body-chart-start {
+  background: var(--studio-deep) !important;
+  border-color: var(--studio-line) !important;
+}
+
+/* A membership reads as a status without painting the entire dashboard. */
+.membership-card, .side-stack > .membership-active,
+.side-stack > .membership-expiring, .side-stack > .membership-expired,
+.side-stack > .membership-inactive {
+  background: #202426 !important;
+  border: 1px solid #ffffff28 !important;
+  box-shadow: inset 4px 0 var(--membership-signal, #858d90), inset -4px 0 var(--membership-signal, #858d90), 0 18px 38px #0003 !important;
+}
+.membership-active { --membership-signal: var(--status-valid); }
+.membership-expiring { --membership-signal: var(--status-expiring); }
+.membership-expired { --membership-signal: var(--status-expired); }
+.membership-inactive { --membership-signal: #858d90; }
+.membership-card .membership-grid span { background: #171a1b !important; }
+.membership-card .membership-title b { color: var(--membership-signal) !important; border-color: currentColor !important; }
+.membership-card .membership-action { background: var(--studio-accent) !important; color: #181a1b !important; }
+.membership-card .membership-action:hover { background: #ffd092 !important; }
+
+/* Inputs and selected choices keep legible text on gray. */
+.plan-page :is(input:not([type="checkbox"]), select, textarea),
+.auth :is(input, select, textarea), .coach-form input,
+.admin-page :is(input, select, textarea) {
+  background: #141718 !important;
+  border-color: #ffffff32 !important;
+  color: var(--studio-text) !important;
+}
+.plan-page :is(input, textarea)::placeholder,
+.auth :is(input, textarea)::placeholder,
+.coach-form input::placeholder { color: #9fa7a8 !important; }
+.plan-page select option, .auth select option { background: #1b1f20 !important; }
+.plan-editor-grid label, .builder-choice, .plan-type-card {
+  background: #1d2123 !important;
+  border-color: var(--studio-line) !important;
+}
+.plan-editor-grid label:hover, .builder-choice:hover { background: #2b2f31 !important; }
+.builder-choice[aria-pressed="true"] { background: #38342b !important; border-color: var(--studio-accent) !important; }
+
+/* Library, workout, progress, and coach share the same material depth. */
+.exercise-library-view .library-card:hover { background: #262b2d !important; }
+.exercise-library-view .library-card-visual { background: #303537 !important; }
+.exercise-library-view .library-muscles button.active { color: #181a1b !important; }
+.exercise-detail-media, .exercise-how-to-media, .exercise-how-to-placeholder { background: #121516 !important; }
+.exercise-meta span, .exercise-detail-copy article { background: #24282a !important; }
+.progress-empty-state, .progress-empty-preview,
+.progress-exercise-number, .progress-history-grid article { background: #202426 !important; }
+.progress-bar { background: #303537 !important; }
+.coach-start, .coach-form, .coach-message.assistant { background: #202426 !important; }
+.coach-prompts, .coach-messages { background: #141718 !important; }
+.coach-message.user { color: #181a1b !important; }
+.coach-form input { background: #121516 !important; }
+.workout-log, .workout-log-panel { border-color: var(--studio-line) !important; }
+.managed-week details, .managed-phase li, .managed-day-content,
+.log-grid article:nth-child(2), .gym-equipment-option,
+.gym-place-choice, .progress-exercise-actions button {
+  background: #202426 !important;
+  border-color: var(--studio-line) !important;
+}
+.managed-phase { background: #171a1b !important; }
+.dashboard-summary .week-boxes b:not(.completed, .skipped, .rest),
+.dashboard-summary .month-boxes b:not(.completed, .skipped, .rest),
+.dashboard-summary .monthly-counts span { background: #252a2c !important; }
+.dashboard-summary .week-boxes b.rest,
+.dashboard-summary .month-boxes b.rest { background: #3b4143 !important; }
+.plan-page .gym-equipment-option { background: #202426 !important; color: var(--studio-text) !important; }
+.plan-page .gym-equipment-option:has(input:checked) { background: #3a342a !important; }
+.admin-table-scroll, .admin-modal { scrollbar-color: #6b7375 #171a1b !important; }
+.admin-roster th { background: #202426 !important; }
+.admin-notice { background: #1b3d31 !important; }
+
+/* Admin follows the same palette, with amber for actions and status for data. */
+.admin-page {
+  --admin-bg: #0d0f10;
+  --admin-panel: #1a1d1f;
+  --admin-panel-soft: #24282a;
+  --admin-line: #ffffff22;
+  --admin-text: #f5f3ed;
+  --admin-muted: #adb3b4;
+  --admin-accent: #f4b566;
+}
+.admin-sidebar, .admin-topbar { background: #151819 !important; }
+.admin-hero { background: #25292a !important; border-color: #ffffff2e !important; box-shadow: inset 4px 0 var(--admin-accent), 0 18px 36px #0003 !important; }
+.admin-hero .admin-kicker { color: var(--admin-accent) !important; }
+.admin-hero p, .admin-hero-number span { color: var(--admin-muted) !important; }
+.admin-quick-panel { background: #24282a !important; }
+.admin-roster-tools input, .admin-roster-tools select { background: #121516 !important; color: var(--admin-text) !important; }
+.admin-primary { color: #181a1b !important; }
+
+@media (max-width: 760px) {
+  .membership-card { box-shadow: inset 4px 0 var(--membership-signal, #858d90), inset -4px 0 var(--membership-signal, #858d90) !important; }
+}
+
+/* Plan choices use the same charcoal surface in every interaction state. */
+.plan-page .plan-type-card,
+.plan-page .plan-type-card.selected {
+  background: #1d2123 !important;
+  border-color: #ffffff29 !important;
+}
+.plan-page .plan-type-card.selected {
+  border-color: #f6b462 !important;
+}
+@media (hover: hover) {
+  .plan-page .plan-type-card:hover {
+    background: #272b2d !important;
+    border-color: #f6b462aa !important;
+  }
+}

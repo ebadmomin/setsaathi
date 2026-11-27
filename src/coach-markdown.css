@@ -1,0 +1,7 @@
+.coach-message.assistant > :not(.coach-sources) { margin: 0 0 .75rem; line-height: 1.65; }
+.coach-message.assistant > :last-child { margin-bottom: 0; }
+.coach-message.assistant ul, .coach-message.assistant ol { padding-left: 1.3rem; }
+.coach-message.assistant li + li { margin-top: .4rem; }
+.coach-message.assistant h3 { font-size: 1rem; color: #f5f5ed; }
+.coach-message.assistant a { color: #f6b462; text-decoration: underline; text-underline-offset: .16em; }
+.coach-message.assistant code { padding: .1rem .3rem; border-radius: .2rem; background: #ffffff1a; }

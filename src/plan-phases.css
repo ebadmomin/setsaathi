@@ -1,0 +1,18 @@
+.phase-badge {
+  display: inline-flex;
+  width: max-content;
+  margin-right: 0.4rem;
+  padding: 0.18rem 0.38rem;
+  border-radius: 999px;
+  font: 700 0.5rem "DM Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.phase-warmup { background: #4cb7d51a; color: #69cce8; }
+.phase-main { background: #f6b4621a; color: #f6b462; }
+.phase-finisher { background: #ef62621a; color: #ff8989; }
+.today-exercise > .phase-badge { margin-bottom: 0.35rem; }
+.phase-breakdown { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-left: auto; }
+.phase-breakdown b { padding: 0.28rem 0.48rem; border-radius: 999px; background: #ffffff0a; color: #9fb3bf; font-size: 0.54rem; }
+@media(max-width:600px){.phase-breakdown{margin-left:0}}

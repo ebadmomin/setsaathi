@@ -1,0 +1,19 @@
+/* The supplied lifter artwork is the wordmark-free site icon. */
+.plan-page .brand { flex: 0 0 auto; min-width: 0; }
+.plan-page .brand-logo { display: block; width: clamp(112px, 10vw, 140px); height: 64px; object-fit: contain; object-position: left center; }
+/* Keep the logo and the first tab in separate layout tracks. */
+.plan-page > header .app-tabs { min-width: 0; overflow-x: auto; }
+@media (max-width: 1180px) {
+  .plan-page > header { flex-wrap: wrap; }
+  .plan-page > header nav { margin-left: auto; }
+  .plan-page > header .app-tabs { order: 3; flex: 1 0 100%; width: 100%; margin: 0; }
+}
+@media (max-width: 700px) {
+  .plan-page .brand-logo { width: 104px; height: 52px; }
+}
+
+.hero .auth-hero-logo { display: block; width: clamp(165px, 17vw, 230px); height: 110px; object-fit: contain; object-position: center; align-self: center; margin: 0 0 2.1rem; }
+.auth-mobile-logo { display: none; }
+@media (max-width: 700px) {
+  .auth-mobile-logo { display: block; width: 132px; height: 74px; object-fit: contain; object-position: center; margin: 0 auto 1.25rem; }
+}

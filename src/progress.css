@@ -1,0 +1,74 @@
+.progress-view { margin: 1.5rem 0 0; }
+.progress-heading { display: flex !important; align-items: end !important; justify-content: space-between !important; gap: 1rem; padding: 0 0 1.2rem !important; border: 0 !important; }
+.progress-heading h2 { margin: 0.15rem 0 0.4rem; color: #fff; font: 600 clamp(2rem, 4vw, 3.5rem)/1 "Playfair Display", serif; }
+.progress-heading > div > span { color: #91a8b7; font-size: 0.72rem; }
+.progress-score { display: grid; justify-items: end; }
+.progress-score strong { color: #f6b462; font: 600 2.3rem "Playfair Display", serif; }
+.progress-score span { color: #a8bbc7; font-size: 0.65rem; }
+.progress-overview { padding: 1rem; border: 1px solid #ffffff18; border-radius: 16px; background: #10263a; }
+.progress-bar { height: 9px; overflow: hidden; border-radius: 999px; background: #081827; }
+.progress-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #f6b462, #ff8f42); transition: width 0.3s ease; }
+.progress-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.9rem 0; }
+.progress-stats span { display: grid; gap: 0.12rem; color: #8da4b3; font-size: 0.6rem; }
+.progress-stats b { color: #fff; font-size: 1rem; }
+.progress-finish { border: 0; border-radius: 9px; background: #f6b462; color: #10263a; padding: 0.65rem 0.9rem; font: 800 0.68rem Manrope, sans-serif; }
+.progress-finish:disabled { background: #ffffff0d; color: #718998; cursor: not-allowed; }
+.progress-notice { display: inline; margin-left: 0.7rem; color: #79d7ad; font-size: 0.62rem; }
+.progress-list, .progress-history { margin-top: 1.4rem; }
+.progress-section-title { display: flex; justify-content: space-between; align-items: end; margin-bottom: 0.7rem; }
+.progress-section-title h3 { margin: 0.12rem 0 0; color: #fff; font: 600 1.45rem "Playfair Display", serif; }
+.progress-section-title > span { color: #8299a8; font-size: 0.62rem; }
+.progress-exercise { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 0.8rem; align-items: center; margin-bottom: 0.55rem; padding: 0.8rem; border: 1px solid #ffffff14; border-radius: 13px; background: #10263a; }
+.progress-exercise.status-completed { border-color: #38c88955; }
+.progress-exercise.status-skipped { border-color: #ef626255; }
+.progress-exercise.status-replaced { border-color: #f6b46255; }
+.progress-exercise-number { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: #ffffff08; color: #f6b462; font: 600 0.66rem "DM Mono", monospace; }
+.progress-exercise-copy { display: grid; gap: 0.22rem; min-width: 0; }
+.progress-exercise-copy > div { display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
+.progress-exercise-copy h3 { margin: 0; color: #fff; font-size: 0.82rem; }
+.progress-exercise-copy small, .progress-exercise-copy p { margin: 0; color: #8199a8; font-size: 0.59rem; }
+.progress-status { width: max-content; padding: 0.2rem 0.4rem; border-radius: 999px; background: #ffffff08; color: #a9bdc9; font-size: 0.54rem; }
+.status-completed .progress-status { background: #38c88918; color: #62dda5; }
+.status-skipped .progress-status { background: #ef626218; color: #ff8989; }
+.status-replaced .progress-status { background: #f6b46218; color: #f6b462; }
+.progress-exercise-actions { display: grid; grid-template-columns: repeat(4, minmax(104px, 1fr)); gap: 0.42rem; grid-column: 1 / -1; }
+.progress-exercise-actions button, .progress-replace button, .progress-change-panel button, .progress-empty-state button { min-height: 40px; border: 1px solid #ffffff1b; border-radius: 9px; background: #ffffff08; color: #b8cad4; padding: 0.5rem 0.72rem; font: 800 0.61rem Manrope, sans-serif; cursor: pointer; }
+.progress-exercise-actions .action-done { border-color: #38c88988; background: #20a66f24; color: #63e6ad; }
+.progress-exercise-actions .action-done:hover { background: #29bd80; color: #061c15; }
+.progress-exercise-actions .action-skip { border-color: #ef626277; background: #ef626218; color: #ff9696; }
+.progress-exercise-actions .action-skip:hover { background: #df555d; color: #fff; }
+.progress-exercise-actions .action-change { border-color: #f6b46277; color: #ffc278; }
+.progress-exercise-actions .action-change:hover { background: #f6b462; color: #10263a; }
+.progress-exercise-actions .action-instructions:hover { border-color: #8ab7d2; color: #d5efff; }
+.progress-exercise-actions .progress-undo { grid-column: 1 / -1; min-height: 30px; border: 0; background: transparent; color: #8199a8; justify-self: end; }
+.progress-change-panel { grid-column: 2 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 0.55rem; align-items: center; padding: 0.85rem; border: 1px solid #f6b46255; border-radius: 12px; background: #f6b4620b; }
+.progress-change-panel[hidden] { display: none; }
+.progress-change-panel div { display: grid; gap: 0.16rem; }
+.progress-change-panel span { color: #f6b462; font: 600 0.51rem "DM Mono", monospace; letter-spacing: .08em; }
+.progress-change-panel strong { color: #fff; font-size: .75rem; }
+.progress-change-panel small { color: #8199a8; font-size: .56rem; }
+.progress-change-panel button:first-of-type { border-color: #f6b462; background: #f6b462; color: #10263a; }
+.progress-replace { grid-column: 2 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 0.5rem; align-items: end; }
+.progress-replace[hidden] { display: none; }
+.progress-replace label { display: grid; gap: .3rem; color: #9fb3c0; font-size: .58rem; }
+.progress-replace input { width: 100%; background: #081827; border-color: #ffffff1b; color: #fff; }
+.progress-history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.progress-history-grid article { display: grid; gap: 0.25rem; padding: 0.8rem; border: 1px solid #ffffff14; border-radius: 11px; background: #10263a; }
+.progress-history-grid time, .progress-history-grid span { color: #8199a8; font-size: 0.58rem; }
+.progress-history-grid strong { color: #fff; font-size: 0.72rem; }
+.progress-empty, .progress-empty-state p { color: #8fa6b5; }
+.progress-empty-state { padding: 2rem; border: 1px solid #ffffff18; border-radius: 16px; background: #10263a; }
+.progress-empty-state h2 { color: #fff; font: 600 2rem "Playfair Display", serif; }
+@media(max-width:800px){.progress-exercise{grid-template-columns:42px 1fr}.progress-exercise-actions{grid-template-columns:1fr 1fr}.progress-replace,.progress-change-panel{grid-column:1/-1}.progress-history-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.progress-heading{align-items:start!important}.progress-score strong{font-size:1.8rem}.progress-stats{grid-template-columns:1fr 1fr}.progress-section-title{align-items:start;flex-direction:column;gap:.35rem}.progress-history-grid{grid-template-columns:1fr}.progress-change-panel,.progress-replace{grid-template-columns:1fr}.progress-change-panel button,.progress-replace button{width:100%}.progress-notice{display:block;margin:.6rem 0 0}}
+.progress-exercise-actions{grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem}
+.progress-exercise-actions button{min-width:0;min-height:34px;padding:.35rem .2rem;border-radius:8px;font-size:.65rem;white-space:nowrap}
+.progress-exercise-actions .action-done,.progress-exercise-actions .action-skip,.progress-exercise-actions .action-change{background:#ffffff08}
+.progress-exercise.status-completed .action-done{background:#2fc179;color:#062a1b;border-color:#2fc179}
+.progress-exercise.status-skipped .action-skip{background:#dc5962;color:#fff;border-color:#dc5962}
+.progress-exercise.status-replaced .action-change,.progress-exercise:has(.progress-change-panel:not([hidden])) .action-change{background:#f6b462;color:#10263a;border-color:#f6b462}
+.progress-exercise-actions:has(.progress-undo){grid-template-columns:repeat(5,minmax(0,1fr))}
+.progress-exercise-actions .progress-undo{grid-column:auto;justify-self:stretch;min-height:34px;padding:.25rem .1rem;font-size:.58rem;border:1px solid #ffffff1b;background:#ffffff05}
+@media(max-width:800px){.progress-exercise-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:800px){.progress-exercise-actions:has(.progress-undo){grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:390px){.progress-exercise-actions button{font-size:.58rem;letter-spacing:-.02em}}

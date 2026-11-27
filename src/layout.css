@@ -1,0 +1,4 @@
+.plan-page{width:100%;padding-left:clamp(1.5rem,7vw,8rem);padding-right:clamp(1.5rem,7vw,8rem)}.dashboard-grid{width:100%;max-width:none}.member-welcome{grid-row:1}.side-stack>.membership-card{grid-row:2}.today-card{grid-row:3}.side-stack>.safety-card{grid-row:3}@media(max-width:820px){.member-welcome,.side-stack>.membership-card,.today-card,.side-stack>.safety-card{grid-row:auto}}
+.plan-editor[hidden],.dashboard-grid[hidden],.member-welcome[hidden],.dashboard-summary[hidden]{display:none!important}
+.dashboard-grid .today-card:has(.plan-empty),.dashboard-grid .safety-card{display:none!important}
+.plan-page [hidden]{display:none!important}

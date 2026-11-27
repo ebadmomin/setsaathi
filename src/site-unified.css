@@ -1,0 +1,195 @@
+/* SetSaathi's shared visual language, applied after the legacy page styles. */
+:root {
+  --ui-bg: #081728;
+  --ui-surface: #10263a;
+  --ui-surface-raised: #162f45;
+  --ui-surface-deep: #0b2032;
+  --ui-border: #ffffff22;
+  --ui-text: #f4f8fb;
+  --ui-muted: #a9bfcd;
+  --ui-accent: #f6b462;
+  --ui-success: #65dda3;
+  --ui-danger: #ff9292;
+  --ui-radius: 18px;
+  color-scheme: dark;
+}
+
+body { background: var(--ui-bg); color: var(--ui-text); }
+button, input, select, textarea { font-family: Manrope, sans-serif; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ui-accent);
+  outline-offset: 3px;
+}
+
+/* One page width and one header rhythm across the signed-in views. */
+.plan-page { width: 100%; min-width: 0; background: radial-gradient(circle at 75% 4%, #183b5352, transparent 36%), var(--ui-bg); }
+.plan-page > header { min-height: 78px; padding: .8rem 0 1rem; border-bottom: 1px solid var(--ui-border); }
+.plan-page > header::after { display: none; }
+.plan-page .brand { gap: .7rem; color: var(--ui-text); }
+.plan-page .brand b { font-size: 1.05rem; }
+.app-tabs { gap: .2rem; padding: .28rem; border-color: var(--ui-border); background: #ffffff0c; }
+.app-tabs button { padding: .5rem .75rem !important; font-size: .73rem !important; white-space: nowrap; }
+.app-tabs, .library-muscles { scrollbar-width: none !important; -ms-overflow-style: none; }
+.app-tabs::-webkit-scrollbar, .library-muscles::-webkit-scrollbar { display: none !important; }
+.plan-page nav .profile-avatar { width: 42px; height: 42px; font-size: .75rem; }
+
+.plan-page .eyebrow {
+  margin-bottom: .55rem;
+  color: var(--ui-accent);
+  font: 600 .67rem/1.35 "DM Mono", monospace;
+  letter-spacing: .1em;
+}
+.membership-card .eyebrow { color: #d2f0e4; }
+.plan-page :is(.managed-plan-heading h2, .library-title h2, .progress-heading h2, .coach-heading h2, .workout-log > h2) {
+  color: var(--ui-text);
+  font: 600 clamp(2.1rem, 3.4vw, 3.35rem)/1.07 "Playfair Display", Georgia, serif;
+  letter-spacing: -.035em;
+}
+.plan-page :is(.managed-plan-heading, .library-title, .progress-heading) {
+  margin-bottom: 1rem;
+  padding-bottom: .65rem !important;
+  border-bottom: 0 !important;
+}
+.plan-page :is(.managed-plan-heading > div > span, .library-title span, .progress-heading > div > span, .coach-heading > span) {
+  color: var(--ui-muted);
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+/* Surfaces share the same edge, radius and spacing while status colors remain distinct. */
+.body-tracker, .dashboard-summary > article, .log-grid > article,
+.gym-equipment-section, .plan-editor, .progress-overview, .progress-exercise,
+.progress-history-grid article, .library-card, .coach-messages {
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+}
+.dashboard-summary > article, .log-grid > article, .progress-overview,
+.progress-exercise, .progress-history-grid article, .library-card, .coach-messages {
+  background: var(--ui-surface);
+}
+.body-tracker, .dashboard-summary > article, .log-grid > article,
+.gym-equipment-section, .plan-editor, .progress-overview { padding: clamp(1.15rem, 2.2vw, 1.65rem); }
+.dashboard-grid, .dashboard-summary, .log-grid, .library-grid { gap: 1rem; }
+.dashboard-summary h3, .log-grid h3, .progress-section-title h3,
+.gym-equipment-summary h3 { font-family: "Playfair Display", Georgia, serif; letter-spacing: -.02em; }
+.dashboard-summary :is(.panel-body > span, .monthly-hint),
+.log-grid :is(li, .log-rest-message), .gym-equipment-section p {
+  color: var(--ui-muted);
+  font-size: .79rem;
+  line-height: 1.5;
+}
+.dashboard-summary .panel-action, .log-checkin-actions button,
+.gym-equipment-edit, .gym-place-search, .managed-new-plan,
+.managed-today-plan, .progress-finish, .coach-form .submit {
+  min-height: 40px;
+  border-radius: 10px;
+  font-size: .75rem;
+  font-weight: 800;
+}
+.dashboard-summary .panel-action { border-color: #f6b46275; color: var(--ui-accent); }
+.dashboard-summary .panel-action:hover { color: var(--ui-bg); }
+.body-tracker-stats article, .membership-card .membership-grid span,
+.managed-plan-summary span { border-radius: 12px; }
+.body-tracker-stats :is(small, strong), .membership-card .membership-grid :is(small, span) { line-height: 1.35; }
+.body-tracker-stats small, .membership-card .membership-grid small { font-size: .64rem; }
+.body-tracker-stats strong { font-size: 1rem; }
+.weekly-panel .week-boxes small { font-size: .61rem; }
+.monthly-panel .month-boxes small { font-size: .67rem; }
+
+/* Plans, the library and progress use a readable text scale. */
+.plan-editor-grid label, .builder-equipment-panel p, .library-card p,
+.progress-exercise-copy p, .progress-exercise-copy small { line-height: 1.5; }
+.plan-editor-grid label, .builder-equipment-panel p { font-size: .78rem; }
+.plan-editor-grid select { font-size: .87rem; }
+.plan-builder-preview, .builder-equipment-panel { border-radius: 14px; }
+.builder-preview-copy strong, .builder-week-copy strong { font-size: .9rem; }
+.builder-preview-copy span, .builder-week-copy span { font-size: .7rem; }
+.builder-phase-counts span { font-size: .66rem; }
+.library-controls :is(input, select), .coach-form input, .progress-replace input {
+  min-height: 48px;
+  border: 1px solid var(--ui-border);
+  border-radius: 11px;
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  font-size: .87rem;
+}
+.library-muscles button { min-height: 40px; font-size: .75rem; }
+.library-card { padding: .9rem; }
+.library-card h3 { color: var(--ui-text); font-size: .95rem; }
+.library-card p { color: var(--ui-muted); font-size: .74rem; }
+.library-card > small { font-size: .7rem; }
+.progress-section-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .3rem 1rem;
+  align-items: end;
+  margin-bottom: .85rem;
+}
+.progress-section-title > div:first-child { grid-column: 1; grid-row: 1; }
+.progress-section-title > span { grid-column: 1; grid-row: 2; color: var(--ui-muted); font-size: .75rem; }
+.progress-section-title .phase-breakdown { grid-column: 2; grid-row: 1 / span 2; justify-self: end; align-self: end; }
+.progress-exercise { gap: .85rem; padding: 1rem; }
+.progress-exercise-copy h3 { font-size: .95rem; }
+.progress-exercise-copy :is(p, small) { color: var(--ui-muted); font-size: .72rem; }
+.progress-exercise-actions button { min-height: 38px; font-size: .73rem; }
+.progress-history-grid :is(time, span) { font-size: .7rem; }
+.progress-history-grid strong { font-size: .82rem; }
+.coach-message p { font-size: .85rem; }
+.coach-provider { color: var(--ui-muted); font-size: .7rem; }
+.coach-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .3rem 1rem; align-items: end; }
+.coach-heading .eyebrow, .coach-heading h2 { grid-column: 1 / -1; }
+.coach-heading > span { display: block; grid-column: 1; }
+.coach-clear { position: static; grid-column: 2; grid-row: 3; align-self: end; font-size: .72rem; }
+
+/* Account menus and forms use the same dark surfaces as the app. */
+.account-menu { width: 180px; border-color: var(--ui-border); background: var(--ui-surface-raised); box-shadow: 0 16px 36px #020b1799; }
+.account-menu button { color: var(--ui-text); font-size: .78rem; }
+.account-menu button:hover { background: #ffffff12; }
+.account-menu .menu-signout { color: var(--ui-danger); }
+.profile-panel { border-color: var(--ui-border); border-radius: var(--ui-radius); }
+.profile-view small { font-size: .67rem; }
+.profile-view p { font-size: .88rem; }
+
+/* Sign-in and registration follow the same navy, amber and serif system. */
+main:not(.plan-page):not(.library-page) { background: var(--ui-bg); }
+.hero { background: radial-gradient(circle at 90% 12%, #17435a, transparent 45%), var(--ui-bg); }
+.auth { background: #0b1d2e; }
+.auth .card {
+  width: min(100%, 455px);
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  background: var(--ui-surface);
+}
+.auth .card h2 { color: var(--ui-text); font: 600 clamp(1.8rem, 3vw, 2.4rem)/1.1 "Playfair Display", Georgia, serif; }
+.auth :is(.subtext, .fine) { color: var(--ui-muted); }
+.auth label { color: #dce9f0; font-size: .78rem; }
+.auth :is(input, select) { border-color: var(--ui-border); background: var(--ui-surface-deep); color: var(--ui-text); }
+.auth .tabs { border-color: var(--ui-border); }
+.auth .tabs button { color: var(--ui-muted); font-size: .8rem; }
+.auth .tabs button.active { color: var(--ui-text); border-color: var(--ui-accent); }
+.auth .submit { background: var(--ui-accent); color: var(--ui-bg); }
+.auth .submit:hover { background: #ffca80; }
+.auth .admin-link { color: var(--ui-muted); }
+.auth .password-field { display: block; position: relative; }
+.auth .password-field input { padding-right: 3.1rem; }
+.auth .password-visibility { position: absolute; top: 50%; right: .48rem; transform: translateY(-50%); display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border: 0; border-radius: .55rem; background: transparent; color: #a9bccb; cursor: pointer; }
+.auth .password-visibility:hover, .auth .password-visibility:focus-visible { background: #ffffff15; color: var(--ui-accent); outline: 2px solid transparent; }
+.auth .password-visibility:focus-visible { outline-color: var(--ui-accent); }
+.auth .password-visibility svg { width: 1.2rem; height: 1.2rem; }
+
+@media (max-width: 700px) {
+  .plan-page > header { min-height: 0; }
+  .app-tabs { padding: .35rem; }
+  .dashboard-summary > article, .body-tracker, .log-grid > article,
+  .gym-equipment-section, .plan-editor, .progress-overview { padding: 1.1rem; }
+  .progress-section-title { grid-template-columns: 1fr; }
+  .progress-section-title .phase-breakdown { grid-column: 1; grid-row: 3; justify-self: start; }
+  .progress-exercise-actions button { font-size: .67rem; }
+  .log-checkin-actions { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; }
+  .log-checkin-actions button { padding: .55rem .2rem; font-size: .66rem; white-space: nowrap; }
+  .coach-heading { grid-template-columns: 1fr; }
+  .coach-heading > span { grid-column: 1; }
+  .coach-clear { grid-column: 1; grid-row: 4; justify-self: start; margin-top: .5rem; }
+  .auth { padding: 1.25rem; }
+}

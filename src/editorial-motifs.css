@@ -1,0 +1,123 @@
+/* Editorial marks shared across the app. They stay behind the real content. */
+.plan-page, .admin-page { background-color: #071018 !important; }
+.plan-page { position: relative; isolation: isolate; }
+.plan-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(#8399a814 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.plan-page::after,
+.site-privacy-footer::before,
+.admin-main::before {
+  --shimmer-edge: 100vw;
+  --shimmer-center: calc(50vw - 17vw);
+  content: "";
+  pointer-events: none;
+  background-image: radial-gradient(#9baebb35 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 50%, transparent), linear-gradient(90deg, transparent, #000 50%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 50%, transparent), linear-gradient(90deg, transparent, #000 50%, transparent);
+  -webkit-mask-size: 34vw 100%, 34vw 100%;
+  mask-size: 34vw 100%, 34vw 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: background-dot-converge 14s ease-in-out infinite;
+}
+.plan-page::after { position: fixed; inset: 0; z-index: -1; }
+.site-privacy-footer::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-attachment: fixed;
+}
+.admin-main::before {
+  --shimmer-edge: calc(100vw - 244px);
+  --shimmer-center: calc((100vw - 244px) / 2 - 17vw);
+}
+@keyframes background-dot-converge {
+  0% { opacity: 0; -webkit-mask-position: -34vw 0, var(--shimmer-edge) 0; mask-position: -34vw 0, var(--shimmer-edge) 0; }
+  12% { opacity: .8; }
+  64% { opacity: .8; -webkit-mask-position: var(--shimmer-center) 0, var(--shimmer-center) 0; mask-position: var(--shimmer-center) 0, var(--shimmer-center) 0; }
+  78%, 100% { opacity: 0; -webkit-mask-position: var(--shimmer-center) 0, var(--shimmer-center) 0; mask-position: var(--shimmer-center) 0, var(--shimmer-center) 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan-page::after, .site-privacy-footer::before, .admin-main::before { animation: none; display: none; }
+}
+@media (max-width: 1050px) and (min-width: 741px) {
+  .admin-main::before { --shimmer-edge: calc(100vw - 190px); --shimmer-center: calc((100vw - 190px) / 2 - 17vw); }
+}
+@media (max-width: 740px) {
+  .admin-main::before { --shimmer-edge: 100vw; --shimmer-center: calc(50vw - 17vw); }
+}
+.site-privacy-footer {
+  position: relative;
+  isolation: isolate;
+  min-height: 140px;
+  overflow: hidden;
+  border-top: 0;
+  background-color: transparent;
+  background-image: radial-gradient(#8399a814 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+.site-privacy-footer > * { position: relative; z-index: 1; }
+.plan-page :is(.library-title h2, .managed-plan-heading h2, .progress-heading h2,
+  .plan-editor > h2, .gym-equipment-name) {
+  max-width: 16ch;
+  font-family: var(--studio-display) !important;
+  font-size: clamp(3.8rem, 7vw, 6.8rem) !important;
+  font-weight: 800 !important;
+  line-height: .84 !important;
+  letter-spacing: -.02em !important;
+  text-transform: uppercase;
+}
+.workout-log .log-header h2 {
+  font: 800 clamp(2.5rem, 4vw, 4.25rem)/.9 var(--studio-display) !important;
+  letter-spacing: -.02em !important;
+  text-transform: uppercase;
+}
+.plan-page :is(.dashboard-summary .panel-heading h3, .body-tracker h2,
+  .gym-equipment-summary h3, .progress-section-title h3) {
+  font-family: var(--studio-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.015em !important;
+  text-transform: uppercase;
+}
+
+/* Keep authentication surfaces clear so the logo, heading and form lead. */
+.hero { position: relative; overflow: hidden; }
+.hero::before, .auth .card::before, .auth .card::after { content: none !important; }
+.hero > * { position: relative; z-index: 1; }
+.auth { background-image: radial-gradient(#8399a814 1px, transparent 1px) !important; background-size: 28px 28px !important; }
+.admin-page { background-image: radial-gradient(#8399a814 1px, transparent 1px) !important; background-size: 28px 28px !important; }
+
+@media (max-width: 760px) {
+  .plan-page :is(.library-title h2, .managed-plan-heading h2, .progress-heading h2,
+    .plan-editor > h2, .gym-equipment-name) {
+    font-size: clamp(3.1rem, 12vw, 5.5rem) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .coach-prompts button { transition: none !important; }
+}
+
+/* Keep glyphs on an unscaled layer in selected and hover states. */
+.plan-page :is(.app-tabs button, .library-muscles button, .library-card,
+  .side-stack > .membership-card, .body-tracker, .dashboard-summary > article,
+  .log-grid > article, .workout-log-panel, .plan-editor,
+  .gym-equipment-section, .progress-overview, .progress-exercise,
+  .managed-plan-summary span, .week-boxes [data-date], .month-boxes [data-date]) {
+  transform: none !important;
+  transform-style: flat !important;
+  backface-visibility: visible !important;
+}
+.plan-page button:hover, .plan-page button:active,
+.auth button:not(.password-visibility):hover,
+.auth button:not(.password-visibility):active,
+.admin-page button:hover, .admin-page button:active {
+  transform: none !important;
+}

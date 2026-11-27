@@ -1,0 +1,20 @@
+/* Keep form text legible in the dark member and admin surfaces, including autofill. */
+.plan-page :is(.gym-equipment-section, .plan-editor, .profile-panel, .body-entry-form, .exercise-library-view, .coach-view, .progress-section, .workout-plan-view) :is(input:not([type="checkbox"]), select, textarea),
+.admin-page .admin-form :is(input, select, textarea) {
+  background-color: #10283b;
+  color: #f4f8fa;
+  -webkit-text-fill-color: #f4f8fa;
+  border-color: #688194;
+  color-scheme: dark;
+}
+.plan-page :is(.gym-equipment-section, .plan-editor, .profile-panel, .body-entry-form, .exercise-library-view, .coach-view, .progress-section, .workout-plan-view) :is(input, textarea)::placeholder,
+.admin-page .admin-form :is(input, textarea)::placeholder { color: #aec2cf; -webkit-text-fill-color: #aec2cf; opacity: 1; }
+.plan-page :is(.gym-equipment-section, .plan-editor, .profile-panel, .body-entry-form, .exercise-library-view, .coach-view, .progress-section, .workout-plan-view) select option,
+.admin-page .admin-form select option { background: #10283b; color: #f4f8fa; }
+.plan-page :is(.gym-equipment-section, .plan-editor, .profile-panel, .body-entry-form, .exercise-library-view, .coach-view, .progress-section, .workout-plan-view) :is(input, select, textarea):-webkit-autofill,
+.admin-page .admin-form :is(input, select, textarea):-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #10283b inset;
+  -webkit-text-fill-color: #f4f8fa;
+}
+.plan-page :is(.gym-equipment-section, .plan-editor, .profile-panel, .body-entry-form, .exercise-library-view, .coach-view, .progress-section, .workout-plan-view) :is(input, select, textarea):focus-visible,
+.admin-page .admin-form :is(input, select, textarea):focus-visible { outline: 2px solid #f6b462; outline-offset: 2px; }

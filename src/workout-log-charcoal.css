@@ -1,0 +1,34 @@
+/* Workout Log uses the same neutral surfaces as member and admin panels. */
+.plan-page .log-grid > article,
+.plan-page .log-grid > .log-day-selected {
+  background: var(--studio-surface) !important;
+  border: 1px solid var(--studio-line) !important;
+  box-shadow: inset 0 1px #ffffff0a !important;
+}
+.plan-page .log-grid > .log-day-selected { border-color: var(--studio-accent) !important; }
+.plan-page .log-grid .log-actual-summary {
+  background: var(--studio-deep) !important;
+  border-color: var(--studio-line) !important;
+  color: var(--studio-muted) !important;
+}
+.plan-page .log-grid .log-actual-summary b,
+.plan-page .log-grid h3 { color: var(--studio-text) !important; }
+.plan-page .log-grid .log-actual-summary strong {
+  background: var(--studio-surface-2) !important;
+  color: var(--studio-text) !important;
+}
+.plan-page .log-grid .log-actual-summary .attendance-completed { background: #43bd8c22 !important; color: #75dcaf !important; }
+.plan-page .log-grid .log-actual-summary .attendance-skipped { background: #ed696922 !important; color: #ff9b9b !important; }
+.plan-page .log-grid .log-actual-summary .attendance-rest { background: #f1a85b22 !important; color: #f8c78e !important; }
+.plan-page .log-grid .log-rest-message {
+  background: var(--studio-deep) !important;
+  border: 1px solid var(--studio-line) !important;
+  color: var(--studio-muted) !important;
+}
+.plan-page .log-grid .log-day-date,
+.plan-page .log-grid li small { color: var(--studio-muted) !important; }
+.plan-page .log-grid .daily-plan-marker { background: #f4b56620 !important; color: var(--studio-accent) !important; }
+.plan-page .workout-log-checkin { background: var(--studio-surface) !important; border-color: var(--studio-line) !important; }
+@media (prefers-reduced-motion: reduce) {
+  .plan-page .log-grid > article { transition: none !important; }
+}

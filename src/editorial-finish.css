@@ -1,0 +1,161 @@
+/* Quiet, content-led finish for the shared navigation and exercise catalogue. */
+.plan-page > header {
+  align-items: center;
+  border-bottom: 1px solid rgba(198, 218, 229, .12);
+  padding-bottom: 1rem;
+}
+.app-tabs {
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, .045) !important;
+  box-shadow: none !important;
+}
+.app-tabs button {
+  border-radius: 10px !important;
+  transition: background .18s ease, color .18s ease !important;
+}
+.app-tabs button.active,
+.app-tabs button.active:hover {
+  background: #f5b25e !important;
+  color: #0b2030 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.app-tabs button:not(.active):hover {
+  background: rgba(255, 255, 255, .09) !important;
+  color: #fff !important;
+  transform: none !important;
+}
+.exercise-library-view .library-title {
+  padding-bottom: 1.5rem !important;
+}
+.exercise-library-view .library-title h2 {
+  font-family: "DM Sans", Manrope, sans-serif;
+  font-weight: 750;
+  letter-spacing: -.055em;
+}
+.exercise-library-view .library-title span {
+  display: block;
+  max-width: 58ch;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.exercise-library-view .library-count {
+  white-space: nowrap;
+  font: 700 .8rem Manrope, sans-serif !important;
+}
+.exercise-library-view .library-controls {
+  gap: .8rem;
+  margin-bottom: 1.3rem;
+}
+.exercise-library-view .library-controls input,
+.exercise-library-view .library-controls select {
+  min-height: 48px;
+  border-radius: 10px;
+  background: #122b3d;
+  color: #f3f8fa;
+  font-size: .88rem;
+}
+.exercise-library-view .library-muscles {
+  gap: .1rem;
+}
+.exercise-library-view .library-muscles button {
+  min-height: 39px;
+  border-radius: 8px;
+  font-size: .78rem;
+  font-weight: 650;
+}
+.exercise-library-view .library-muscles button.active {
+  background: rgba(245, 178, 94, .14);
+  color: #ffca82;
+}
+.exercise-library-view .library-muscles button:hover {
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+}
+.exercise-library-view .library-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+.exercise-library-view .library-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 205px;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(207, 225, 233, .16);
+  border-radius: 12px;
+  background: #10283a;
+  box-shadow: none;
+  transition: border-color .18s ease, background .18s ease !important;
+}
+.exercise-library-view .library-card:hover {
+  transform: none !important;
+  border-color: rgba(245, 178, 94, .62);
+  background: #153247;
+  box-shadow: none !important;
+}
+.exercise-library-view .library-card:focus-visible {
+  outline: 2px solid #f5b25e;
+  outline-offset: 3px;
+}
+.exercise-library-view .library-card-top,
+.exercise-library-view .library-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+.exercise-library-view .library-card-top {
+  color: #a8c8d6;
+  font: 700 .69rem Manrope, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.exercise-library-view .library-card-top span:last-child {
+  color: #f5b25e;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.exercise-library-view .library-card h3 {
+  margin: 1rem 0 .5rem;
+  color: #f6fafb;
+  font: 700 1.2rem/1.22 Manrope, sans-serif !important;
+  letter-spacing: -.035em;
+}
+.exercise-library-view .library-card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: auto;
+  max-height: none;
+  overflow: hidden;
+  margin: 0 0 1rem;
+  color: #b9ccd6;
+  font-size: .84rem !important;
+  line-height: 1.5;
+}
+.exercise-library-view .library-card-bottom {
+  margin-top: auto;
+  padding-top: .85rem;
+  border-top: 1px solid rgba(207, 225, 233, .13);
+  color: #a9bdc8;
+  font-size: .74rem;
+}
+.exercise-library-view .library-card-bottom small {
+  flex: 0 0 auto;
+  color: #ffc477;
+  font-size: .74rem;
+  font-weight: 700;
+}
+.exercise-library-view .library-card-bottom span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 650px) {
+  .exercise-library-view .library-title { gap: .6rem; }
+  .exercise-library-view .library-grid { grid-template-columns: 1fr; }
+  .exercise-library-view .library-card { min-height: 180px; }
+}
+@media (min-width: 1200px) {
+  .exercise-library-view .library-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

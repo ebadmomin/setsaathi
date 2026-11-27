@@ -1,0 +1,406 @@
+/* Layout and icon fixes from the UX audit. Loaded last so it can refine earlier styles. */
+
+/* Grids: let each card size to its own content instead of stretching to the tallest sibling. */
+.log-grid,
+.managed-day-content,
+.library-layout {
+  align-items: start !important;
+}
+
+/* Library cards: clamp long instructions to three lines; the card itself opens the full detail view. */
+.library-card-copy {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Shared SVG icons (skip, info, play) sit on the text baseline and scale with the text. */
+.ui-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  flex: 0 0 auto;
+}
+
+.status-symbol .ui-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Membership form: dark, high-contrast fields on the membership card (was white on white). */
+.membership-card .membership-form label,
+.membership-card .membership-form small {
+  color: #f4f8fa;
+}
+.membership-card .membership-form input,
+.membership-card .membership-form select {
+  background-color: #10283b;
+  color: #f4f8fa;
+  -webkit-text-fill-color: #f4f8fa;
+  border: 1px solid #688194;
+  color-scheme: dark;
+}
+.membership-card .membership-form input::placeholder {
+  color: #9fb3c2;
+  opacity: 1;
+}
+.membership-card .membership-form select option {
+  background: #10283b;
+  color: #f4f8fa;
+}
+
+/* Auth page: forgot-password entry point under the sign-in button. */
+.forgot-link {
+  display: block;
+  margin: 0.6rem auto 0;
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* AI Coach: user bubbles hug short prompts instead of stretching. */
+.coach-message.user {
+  width: fit-content;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+/* Workout log: header with date controls; previous/next day cards are buttons. */
+.log-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.9rem;
+}
+.log-date-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+}
+.log-date-controls label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+}
+.log-date-controls input {
+  min-height: 2.4rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #688194;
+  background: #10283b;
+  color: #f4f8fa;
+  color-scheme: dark;
+}
+.log-today {
+  min-height: 2.4rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid #f6b462;
+  border-radius: 999px;
+  background: rgba(246, 180, 98, 0.12);
+  color: #f6b462;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.log-nav-card {
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.log-nav-card:hover,
+.log-nav-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #f6b462;
+  outline: none;
+}
+
+/* Progress: skeleton placeholder while data loads, so the page is never blank. */
+.progress-skeleton {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.2rem 0;
+}
+.progress-skeleton span {
+  display: block;
+  height: 4.5rem;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #ffffff0d 25%, #ffffff1f 37%, #ffffff0d 63%);
+  background-size: 400% 100%;
+  animation: progress-skeleton-shimmer 1.4s ease infinite;
+}
+.progress-skeleton span:nth-child(2) { height: 7rem; }
+@keyframes progress-skeleton-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-skeleton span { animation: none; }
+}
+
+/* Plan builder: three-step flow navigation. */
+.plan-builder-steps {
+  margin: 0.2rem 0 0.8rem;
+  color: #f6b462;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.plan-builder-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.plan-builder-next {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: #f6b462;
+  color: #10263a;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.plan-builder-next:disabled { opacity: 0.6; cursor: wait; }
+.plan-builder-back-step {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #688194;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.plan-builder-summary {
+  margin-top: 0.9rem;
+  color: #c9d8e2;
+  font-size: 0.9rem;
+}
+
+/* Body tracker chart: axis labels, grid and tap-friendly readout. */
+.body-chart-wrap { display: grid; gap: 0.5rem; }
+.body-chart text { fill: #9fb3c2; font-size: 12px; font-family: "DM Mono", monospace; }
+.body-chart .body-grid { stroke: #ffffff1f; stroke-dasharray: 3 4; }
+.body-chart .body-dot { fill: #f6b462; stroke: #10263a; stroke-width: 2; cursor: pointer; outline: none; }
+.body-chart .body-dot:focus-visible { stroke: #ffffff; stroke-width: 3; }
+.body-chart-readout { margin: 0; color: #dce8ef; font-size: 0.85rem; font-weight: 700; min-height: 1.3em; }
+
+/* Gym: the machine list uses the page's single scroll, not a nested scroll box. */
+.gym-equipment-options {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Missed-workout prompt: two clear choices, no default. */
+.missed-day-prompt {
+  margin: 0 0 1.2rem;
+  padding: 1.1rem;
+  border: 1px solid var(--studio-accent, #f4b566);
+  border-radius: 18px;
+  background: #211e19;
+  color: var(--studio-text, #f5f3ed);
+}
+.missed-day-prompt h3 { margin: 0.2rem 0 0.35rem; font-size: 1.15rem; }
+.missed-day-copy { margin: 0 0 0.8rem; color: var(--studio-muted, #adb3b4); }
+.missed-day-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+.missed-day-option {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.9rem;
+  border: 1px solid var(--studio-line, #ffffff1e);
+  border-radius: 14px;
+  background: var(--studio-surface, #1a1d1f);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.missed-day-option:hover { border-color: var(--studio-accent, #f4b566); background: var(--studio-surface-2, #24282a); }
+.missed-day-option:focus-visible { outline: 2px solid var(--studio-accent, #f4b566); outline-offset: 2px; }
+.missed-day-option span { color: var(--studio-muted, #adb3b4); font-size: 0.85rem; }
+.missed-day-option:disabled { opacity: 0.6; cursor: wait; }
+.missed-day-message { min-height: 1.2em; margin: 0.6rem 0 0; color: var(--studio-accent, #f4b566); font-size: 0.85rem; }
+@media (max-width: 600px) { .missed-day-options { grid-template-columns: 1fr; } }
+
+/* Gym machine checklist: search and category chips; hidden rows collapse. */
+.gym-equipment-group[hidden],
+.gym-equipment-options label[hidden] { display: none !important; }
+.gym-equipment-filter { display: grid; gap: 0.7rem; margin: 0 0 1rem; }
+.gym-equipment-search { display: grid; gap: 0.35rem; color: #d4e3eb; font-size: 0.78rem; font-weight: 700; }
+.gym-equipment-search input {
+  min-height: 2.6rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #688194;
+  border-radius: 10px;
+  background: #10283b;
+  color: #f4f8fa;
+  font: inherit;
+  color-scheme: dark;
+}
+.gym-equipment-search input::placeholder { color: #9fb3c2; opacity: 1; }
+.gym-equipment-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.gym-equipment-chip {
+  min-height: 2.1rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid #688194;
+  border-radius: 999px;
+  background: transparent;
+  color: #d4e3eb;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.gym-equipment-chip[aria-pressed="true"] { background: #f6b462; border-color: #f6b462; color: #10263a; font-weight: 800; }
+.gym-equipment-filter-empty { margin: 0; color: #f6b462; font-size: 0.85rem; }
+
+/* Password reset flow on the sign-in page. */
+.forgot-password { display: grid; gap: 0.9rem; }
+.forgot-password h2 { margin: 0; }
+.forgot-password form { display: grid; gap: 0.8rem; }
+.forgot-copy { margin: 0; color: #c9d8e2; }
+.forgot-password .notice { margin: 0; }
+
+/* Progress: use the full card width and give each action an equal, predictable slot. */
+.progress-overview-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 2.5rem;
+}
+.progress-next-step {
+  color: #c8d9e2;
+  font-size: .86rem;
+  font-weight: 700;
+}
+.progress-overview-footer .progress-notice { margin: 0; }
+.progress-exercise-actions,
+.progress-exercise-actions:has(.progress-undo) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+}
+.progress-exercise-actions:not(:has(.progress-undo)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.progress-history-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* The account menu belongs to the avatar, with simple rows instead of nested pills. */
+.plan-page nav .account-menu {
+  top: calc(100% + .7rem);
+  right: 0;
+  width: 190px;
+  padding: .35rem;
+  border-radius: 14px;
+  background: #173349;
+  box-shadow: 0 18px 42px #020b17aa;
+}
+.plan-page nav .account-menu button {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: .55rem .8rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #f4f8fb;
+  text-align: left;
+}
+.plan-page nav .account-menu button + button { border-top: 1px solid #ffffff1c; border-radius: 0 0 8px 8px; }
+.plan-page nav .account-menu .menu-signout { color: #ffaaa8; }
+.plan-page nav .account-menu button:hover,
+.plan-page nav .account-menu button:focus-visible { background: #ffffff14; }
+.plan-page > header:has(.account-menu) { position: relative; z-index: 100; }
+.plan-page nav:has(.account-menu) { z-index: 101; }
+
+/* The close control stays in its own header, above the scrolling notes. */
+.exercise-how-to-modal {
+  width: min(660px, 100%);
+  max-height: min(760px, calc(100dvh - 2rem));
+  padding: 0;
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+.exercise-how-to-scroll {
+  padding: 0 clamp(1.5rem, 4vw, 2.25rem) clamp(1.5rem, 4vw, 2.25rem);
+  scrollbar-gutter: stable;
+  scrollbar-color: #d99a55 #10263a;
+  scrollbar-width: thin;
+}
+.exercise-how-to-scroll::-webkit-scrollbar { width: 8px; }
+.exercise-how-to-scroll::-webkit-scrollbar-track { background: #10263a; }
+.exercise-how-to-scroll::-webkit-scrollbar-thumb { background: #d99a55; border-radius: 999px; }
+.exercise-how-to-scroll::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+.exercise-how-to-modal h2 { margin-bottom: 1.15rem; padding-right: 0; }
+.exercise-how-to-placeholder { min-height: 150px; padding: 1.25rem; }
+.exercise-how-to-placeholder p { max-width: 42ch; margin: .4rem 0 0; }
+.exercise-how-to-copy { padding-top: 1rem; }
+
+@media (max-width: 600px) {
+  .progress-exercise-actions,
+  .progress-exercise-actions:has(.progress-undo),
+  .progress-exercise-actions:not(:has(.progress-undo)) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .progress-exercise-actions:not(:has(.progress-undo)) .action-change { grid-column: 1 / -1; }
+  .progress-history-grid { grid-template-columns: 1fr; }
+  .exercise-how-to-modal { max-height: calc(100dvh - 1rem); }
+}
+
+/* Membership status and edit control read as one tidy header group. */
+.membership-card .membership-title > b {
+  align-self: start;
+  margin-top: .15rem;
+  padding: .42rem .85rem;
+  border: 1px solid #ffffff66;
+  border-radius: 999px;
+  background: #ffffff1e;
+  color: #fff;
+  font: 800 .74rem/1 var(--type-body);
+  letter-spacing: .04em;
+}
+.membership-card .membership-edit-icon {
+  top: .02rem;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff80;
+  background: #ffffff16;
+  color: #fff;
+  box-shadow: none;
+}
+.membership-card .membership-edit-icon:hover,
+.membership-card .membership-edit-icon:focus-visible {
+  border-color: #fff;
+  background: #ffffff30;
+  color: #fff;
+}
+
+.managed-phase > header b small { color: #9eb7c5; font-size: .72rem; font-weight: 600; }
+.managed-phase-limit { margin: .85rem 0 0; color: #a9bfcd; font-size: .77rem; text-align: center; }
+
+@media (max-width: 700px) {
+  .plan-page > header {
+    display: grid;
+    grid-template-columns: minmax(42px, 1fr) auto minmax(42px, 1fr);
+    align-items: center;
+    gap: .6rem;
+  }
+  .plan-page > header .brand { grid-column: 2; grid-row: 1; justify-self: center; }
+  .plan-page > header .brand-logo { width: 120px; height: 58px; object-position: center; }
+  .plan-page > header nav { grid-column: 3; grid-row: 1; justify-self: end; margin: 0; }
+  .plan-page > header .app-tabs { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: 0; }
+  .managed-day-content { grid-template-columns: minmax(0, 1fr); }
+  .managed-phase { min-width: 0; }
+  .managed-phase .managed-add-exercise { min-height: 44px; }
+}

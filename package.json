@@ -1,0 +1,30 @@
+{
+  "name": "setsaathi-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "worker:dev": "wrangler dev",
+    "worker:test": "vitest run --config worker/vitest.config.ts",
+    "worker:typecheck": "tsc --noEmit -p worker/tsconfig.json",
+    "worker:deploy:dry": "wrangler deploy --dry-run",
+    "worker:seed:generate": "python worker/scripts/generate_seed.py"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.9.0",
+    "@cloudflare/workers-types": "^5.20261123.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.166.0",
+    "zod": "^4.6.7"
+  }
+}

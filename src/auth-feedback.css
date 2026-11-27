@@ -1,0 +1,76 @@
+.auth-card .auth-feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  margin-top: 0.125rem;
+  padding: 1rem;
+  border: 1px solid #845c4b;
+  border-radius: 14px;
+  background: #29211e;
+  color: #f1e8e1;
+  line-height: 1.5;
+}
+
+.auth-card .auth-feedback-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid #b8795e;
+  border-radius: 50%;
+  color: #ffc495;
+  font: 700 0.875rem/1 system-ui, sans-serif;
+}
+
+.auth-card .auth-feedback-content { min-width: 0; }
+.auth-card .auth-feedback strong {
+  display: block;
+  margin: 0 0 0.2rem;
+  color: #fff7ef;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+.auth-card .auth-feedback p {
+  margin: 0;
+  color: #e7d6cc;
+  font-size: 0.83rem;
+  overflow-wrap: anywhere;
+}
+.auth-card .auth-feedback a {
+  color: #ffc078;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.auth-card .auth-feedback a:hover { color: #ffdbad; }
+.auth-card .auth-feedback a:focus-visible {
+  outline: 2px solid #ffc078;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.auth-card .auth-feedback .auth-feedback-icon {
+  align-self: center;
+  flex-basis: 2.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-color: #e67b75;
+  color: #ff918a;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.auth-card .auth-feedback strong {
+  color: #ff6f6f;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+.auth-card .auth-blocked-reason { display: block; margin-top: .45rem; color: #ffd1b6; font-weight: 650; }
+
+.auth-card-admin .fine { text-align: center; }
+
+@media (max-width: 480px) {
+  .auth-card .auth-feedback { padding: 0.875rem; gap: 0.75rem; }
+}

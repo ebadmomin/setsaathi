@@ -1,0 +1,43 @@
+.body-tracker { margin: 1.25rem 0; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid #ffffff18; border-radius: 18px; background: #10283c; }
+.body-tracker-heading { display: flex !important; justify-content: space-between !important; align-items: end !important; gap: 1rem; padding: 0 !important; border: 0 !important; }
+.body-tracker-heading h2 { margin: .15rem 0 .25rem; color: #fff; font: 600 clamp(1.5rem, 3vw, 2.2rem) "Playfair Display", serif; }
+.body-tracker-heading span { color: #8fa7b7; font-size: .65rem; }
+.body-entry-toggle { border: 0; border-radius: 10px; background: #f6b462; color: #10263a; padding: .7rem 1rem; font: 800 .65rem Manrope, sans-serif; cursor: pointer; }
+.body-tracker-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: .65rem; margin: 1rem 0; }
+.body-tracker-stats article { display: grid; gap: .3rem; padding: .8rem; border: 1px solid transparent; border-radius: 12px; background: #071b2b80; }
+.body-tracker-stats small { color: #829cac; font: 500 .5rem "DM Mono", monospace; letter-spacing: .06em; }
+.body-tracker-stats strong { color: #fff; font-size: .84rem; }
+.body-tracker-stats .loss strong { color: #63e6ad; }
+.body-tracker-stats .gain strong { color: #ffc278; }
+.body-tracker-stats .neutral strong { color: #9fb3c0; }
+.body-bmi-card { align-content: start; }
+.body-bmi-card strong { font-size: 1.15rem; line-height: 1.1; }
+.body-tracker-stats .body-bmi-underweight { border-color: #5aaaf052; background: #1a3a55; }
+.body-tracker-stats .body-bmi-healthy { border-color: #43c89352; background: #154637; }
+.body-tracker-stats .body-bmi-overweight { border-color: #f6b46266; background: #493822; }
+.body-tracker-stats .body-bmi-obesity { border-color: #ed737366; background: #4b2830; }
+.body-bmi-status { width: fit-content; margin-top: .15rem; padding: .25rem .55rem; border-radius: 999px; font-size: .68rem; font-weight: 800; }
+.body-bmi-status.underweight { background: #5aaaf023; color: #91caff; }
+.body-bmi-status.healthy { background: #43c89324; color: #72e9b3; }
+.body-bmi-status.overweight { background: #f6b46225; color: #ffc579; }
+.body-bmi-status.obesity { background: #ed737328; color: #ff9b9b; }
+.body-bmi-missing { color: #9fb3c0; font-size: .66rem; }
+.body-chart-wrap { min-height: 180px; overflow: hidden; border-radius: 14px; background: #071b2b; }
+.body-chart { display: block; width: 100%; height: 190px; }
+.body-chart line { stroke: #29465b; stroke-width: 1; }
+.body-chart polyline { fill: none; stroke: #f6b462; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+.body-chart circle { fill: #10283c; stroke: #f6b462; stroke-width: 3; }
+.body-chart text { fill: #7893a5; font: 10px Manrope, sans-serif; }
+.body-chart-empty { display: grid; place-items: center; min-height: 180px; color: #829cac; font-size: .7rem; }
+.body-entry-form { display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)) auto auto; align-items: end; gap: .7rem; margin-top: 1rem; padding: 1rem; border: 1px solid #f6b46244; border-radius: 13px; background: #071b2b; }
+.body-entry-form[hidden] { display: none; }
+.body-entry-form label { display: grid; gap: .35rem; color: #9fb3c0; font-size: .58rem; }
+.body-entry-form input { width: 100%; border: 1px solid #29465b; border-radius: 9px; background: #10283c; color: #fff; padding: .68rem; }
+.body-entry-form button { min-height: 40px; border: 1px solid #35536a; border-radius: 9px; background: transparent; color: #b9d0df; padding: .55rem .8rem; font-weight: 800; cursor: pointer; }
+.body-entry-form button[type="submit"] { border-color: #f6b462; background: #f6b462; color: #10263a; }
+.body-entry-message { grid-column: 1 / -1; margin: 0; color: #63e6ad; font-size: .62rem; }
+.body-tracker-error { color: #ff9696; }
+.body-tracker-retry h2 { color: #fff; font: 600 1.7rem "Playfair Display", serif; }
+.body-tracker-retry button { border: 1px solid #f6b462; border-radius: 9px; background: #f6b462; color: #10263a; padding: .6rem .9rem; font-weight: 800; cursor: pointer; }
+@media(max-width:900px){.body-tracker-stats{grid-template-columns:repeat(2,1fr)}.body-entry-form{grid-template-columns:1fr 1fr}.body-entry-form label:first-child{grid-column:1/-1}}
+@media(max-width:600px){.body-tracker-heading{align-items:start!important;flex-direction:column}.body-entry-toggle{width:100%}.body-entry-form{grid-template-columns:1fr}.body-entry-form label:first-child{grid-column:auto}}

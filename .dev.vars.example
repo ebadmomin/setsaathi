@@ -1,0 +1,12 @@
+# Local Worker development only. Copy to .dev.vars and replace placeholders.
+# Never commit .dev.vars or real credentials.
+SECRET_KEY=replace-with-a-long-random-local-secret
+INITIAL_ADMIN_EMAIL=admin@example.com
+INITIAL_ADMIN_MOBILE=+919999999999
+INITIAL_ADMIN_PASSWORD=replace-with-a-strong-local-password
+INITIAL_ADMIN_USERNAME=administrator
+INITIAL_ADMIN_NAME=SetSaathi Admin
+OPENROUTER_API_KEY=
+BREVO_API_KEY=
+BREVO_SENDER_EMAIL=
+BREVO_SENDER_NAME=SetSaathi

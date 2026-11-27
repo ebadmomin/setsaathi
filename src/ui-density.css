@@ -1,0 +1,223 @@
+/* Shared compact rhythm for member progress and admin records. */
+.plan-page .progress-overview {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem !important;
+}
+.plan-page .progress-bar { height: 8px; }
+.plan-page .progress-stats {
+  margin: .85rem 0 .65rem !important;
+}
+.plan-page .progress-stats > span {
+  padding: .15rem .8rem;
+  gap: .1rem;
+  font-size: .76rem !important;
+}
+.plan-page .progress-stats b {
+  font-size: 1.9rem !important;
+  line-height: 1 !important;
+}
+.plan-page .progress-overview-footer { min-height: 1.5rem; }
+.plan-page .progress-list { margin-top: 2rem; }
+.plan-page .progress-section-title .phase-breakdown {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin-left: 0;
+  gap: .45rem;
+}
+.plan-page .progress-section-title .phase-breakdown b {
+  padding: .43rem .68rem;
+  border: 1px solid #ffffff22;
+  color: #d5dcd7;
+  font-size: .76rem;
+  line-height: 1.2;
+}
+.plan-page .progress-exercise {
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  gap: .35rem .75rem;
+  padding: .8rem .6rem !important;
+}
+.plan-page .progress-exercise-number {
+  width: 36px;
+  height: 36px;
+}
+.plan-page .progress-exercise-copy { gap: .12rem; }
+.plan-page .progress-exercise-copy { grid-column: 2; grid-row: 1; }
+.plan-page .progress-exercise-number { grid-column: 1; grid-row: 1; }
+.plan-page .progress-exercise-utilities {
+  display: contents;
+}
+.plan-page .progress-exercise-utilities .exercise-how-to {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+}
+.plan-page .progress-exercise-utilities .progress-undo {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: end;
+  min-width: 88px;
+  min-height: 40px;
+  padding: .4rem .65rem;
+  border: 1px solid var(--studio-line);
+  border-radius: 8px;
+  background: var(--studio-surface-2);
+  color: var(--studio-text);
+  font: 700 .76rem var(--studio-body);
+  cursor: pointer;
+}
+.plan-page .progress-exercise-utilities .progress-undo:hover {
+  border-color: var(--studio-accent);
+  color: var(--studio-accent);
+}
+body .plan-page .progress-exercise h3 {
+  font-size: 1.25rem !important;
+  line-height: 1.05 !important;
+}
+.plan-page .progress-exercise-copy p { line-height: 1.3; }
+.plan-page .progress-status { margin-top: .08rem; font-size: .7rem !important; }
+.plan-page .progress-exercise-actions,
+.plan-page .progress-exercise-actions:has(.progress-undo) {
+  grid-column: 2 !important;
+  grid-row: 2;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(100%, 360px);
+  gap: .4rem !important;
+}
+.plan-page .progress-exercise-actions button {
+  min-height: 40px;
+  min-width: 0;
+  padding: .4rem .65rem !important;
+  font-size: .76rem !important;
+}
+.plan-page .progress-exercise-actions .action-change { grid-column: auto; }
+.plan-page .progress-exercise.status-completed .action-done {
+  background: #187d58 !important;
+  border-color: #2fc179 !important;
+  color: #fff !important;
+}
+.plan-page .progress-exercise.status-skipped .action-skip {
+  background: #a73d48 !important;
+  border-color: #dc5962 !important;
+  color: #fff !important;
+}
+.plan-page .progress-exercise.status-replaced .action-change {
+  background: var(--studio-accent) !important;
+  border-color: var(--studio-accent) !important;
+  color: #191b1c !important;
+}
+.admin-page .admin-stats article {
+  min-height: 108px;
+  padding: .85rem 1rem;
+}
+.admin-page .admin-stats strong { font-size: 2.5rem; }
+.admin-page .admin-roster td { padding: .72rem 1rem; }
+.admin-page .admin-status {
+  padding: .4rem .65rem;
+  font-size: .76rem;
+}
+@media (max-width: 760px) {
+  .plan-page .progress-section-title { grid-template-columns: 1fr; }
+  .plan-page .progress-section-title .phase-breakdown {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    margin-top: .4rem;
+  }
+}
+@media (max-width: 600px) {
+  .plan-page .progress-overview { padding: .85rem 1rem !important; }
+  .plan-page .progress-stats { gap: .5rem 0 !important; }
+  .plan-page .progress-stats > span:nth-child(odd) { padding-left: 0; }
+  .plan-page .progress-exercise { padding: .75rem .35rem !important; }
+  .plan-page .progress-exercise-utilities .exercise-how-to { padding: .4rem .6rem; }
+  .plan-page .progress-exercise-actions button { padding: .35rem .25rem !important; }
+}
+
+/* Dashboard cards use one compact, readable spacing rhythm. */
+.plan-page .side-stack > .membership-card {
+  padding: clamp(1.25rem, 2vw, 2rem);
+}
+.plan-page .membership-card .membership-title h3 {
+  font-size: clamp(2.2rem, 3vw, 3rem) !important;
+  line-height: 1 !important;
+}
+.plan-page .membership-card .membership-message { margin-top: .55rem; }
+.plan-page .membership-card .membership-grid {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+}
+.plan-page .membership-card .membership-grid span { padding: .7rem .85rem !important; }
+.plan-page .membership-card .membership-action { margin-top: .9rem; }
+
+.plan-page .body-tracker-heading h2,
+.plan-page .dashboard-summary .panel-heading h3 {
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem) !important;
+  line-height: 1.08 !important;
+}
+.plan-page .body-tracker-stats article { min-height: 84px; padding: .8rem .95rem; }
+.plan-page .body-chart-readout {
+  margin: 0;
+  padding: .4rem 1rem .75rem;
+  color: var(--studio-text);
+  font-size: .8rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.plan-page .dashboard-summary > .dashboard-workout-panel,
+.plan-page .dashboard-summary > .weekly-panel { padding: 1.2rem 1.4rem; }
+.plan-page .dashboard-workout-panel .panel-body { gap: .6rem 1rem; }
+.plan-page .dashboard-workout-panel .today-checkin { gap: .6rem; }
+.plan-page .dashboard-workout-panel .today-checkin button { min-height: 44px; }
+.plan-page .weekly-panel .panel-body { margin-top: .85rem; }
+.plan-page .dashboard-summary > .weekly-panel {
+  border: 1px solid var(--studio-line) !important;
+  border-radius: 14px !important;
+  padding: 1.15rem 1.25rem 1.25rem !important;
+}
+.plan-page .weekly-panel::before { left: 1.25rem !important; }
+.plan-page .weekly-panel .week-boxes {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  gap: .5rem;
+}
+.plan-page .weekly-panel .week-boxes b {
+  min-height: 68px;
+  padding: .45rem .25rem;
+  gap: .12rem;
+}
+.plan-page .weekly-panel .week-boxes small { font-size: .7rem; }
+.plan-page .weekly-panel .week-boxes .day-status-label { font-size: .68rem; }
+
+/* Keep the Library label and its count on one visual center line at every width. */
+.plan-page .library-muscles button {
+  align-items: center;
+  line-height: 1.2;
+}
+.plan-page .library-muscles button small {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  margin: 0;
+  line-height: 1;
+  font-size: .72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 650px) {
+  .plan-page .side-stack > .membership-card,
+  .plan-page .dashboard-summary > .dashboard-workout-panel,
+  .plan-page .dashboard-summary > .weekly-panel { padding: 1rem; }
+  .plan-page .membership-card .membership-title h3 { font-size: 2.2rem !important; }
+  .plan-page .body-tracker-stats article { min-height: 76px; }
+  .plan-page .dashboard-summary > .weekly-panel { padding: 1rem !important; }
+  .plan-page .weekly-panel::before { left: 1rem !important; }
+  .plan-page .weekly-panel .week-boxes { gap: .25rem; }
+  .plan-page .weekly-panel .week-boxes b { min-height: 58px; padding: .35rem .1rem; }
+  .plan-page .weekly-panel .week-boxes small { font-size: .54rem; }
+}

@@ -1,0 +1,22 @@
+.app-skeleton, .progress-skeleton { display: grid; gap: .8rem; padding: 1rem 0; }
+.app-skeleton span, .progress-skeleton span { display: block; height: 3.8rem; border-radius: 10px; background: linear-gradient(90deg,#ffffff0d 25%,#ffffff1d 40%,#ffffff0d 65%); background-size: 400% 100%; animation: app-shimmer 1.3s ease infinite; }
+.app-skeleton span:first-child { height: 2.2rem; width: 56%; }
+.app-skeleton span:last-child { height: 5.5rem; }
+.body-delta-baseline { display: block; margin-top: .45rem; font-size: .76rem; color: #b9c2bd; }
+.monthly-title { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.monthly-navigation { display: flex; gap: .35rem; }
+.monthly-navigation button { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 1px solid #ffffff3b; border-radius: 8px; background: #ffffff0d; color: #f5f5ed; font: 1.6rem/1 Arial,sans-serif; cursor: pointer; }
+.monthly-navigation button:hover:not(:disabled), .monthly-navigation button:focus-visible { border-color: #f6b462; color: #f6b462; }
+.monthly-navigation button:disabled { opacity: .35; cursor: default; }
+/* The Gym page has no card edge under its header; suppress the detached accent dash. */
+.gym-equipment-section::before { display: none !important; }
+.coach-typing { display: flex; align-items: center; gap: .4rem; min-height: 3rem; }
+.coach-typing span { width: .4rem; height: .4rem; border-radius: 50%; background: #f6b462; opacity: .4; animation: coach-pulse 1s ease-in-out infinite; }
+.coach-typing span:nth-child(2) { animation-delay: .16s; }
+.coach-typing span:nth-child(3) { animation-delay: .32s; }
+.auth-card .submit[aria-busy="true"] { position: relative; opacity: .8; cursor: wait; }
+.auth-card .submit[aria-busy="true"]::after { content: ""; display: inline-block; width: .85rem; height: .85rem; margin-left: .6rem; vertical-align: -.12rem; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: auth-spin .8s linear infinite; }
+@keyframes app-shimmer { to { background-position: -100% 50%; } }
+@keyframes coach-pulse { 50% { opacity: 1; transform: translateY(-.2rem); } }
+@keyframes auth-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .app-skeleton span, .progress-skeleton span, .coach-typing span, .auth-card .submit[aria-busy="true"]::after { animation: none; } }

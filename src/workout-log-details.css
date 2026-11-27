@@ -1,0 +1,41 @@
+.log-day-date { display: block; margin: 0.15rem 0 0.7rem; color: #829aa9; font-size: 0.58rem; }
+.daily-plan-marker{display:inline-block;margin:0 0 .55rem;padding:.22rem .42rem;border-radius:999px;background:#f6b46218;color:#f6b462;font-size:.5rem}
+.workout-log li { position: relative; }
+.workout-log li.actual-completed { border-left: 3px solid #38c889; }
+.workout-log li.actual-skipped { border-left: 3px solid #ef6262; }
+.workout-log li.actual-replaced { border-left: 3px solid #f6b462; }
+.actual-status { display: block; margin-top: 0.25rem; color: #91a8b6; font-size: 0.52rem; font-style: normal; }
+.actual-completed .actual-status { color: #62dda5; }
+.actual-skipped .actual-status { color: #ff8989; }
+.actual-replaced .actual-status { color: #f6b462; }
+.log-actual-summary { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.65rem; border-top: 1px solid #ffffff12; color: #829aa9; font-size: 0.56rem; }
+.log-actual-summary b { color: #fff; }
+.log-actual-summary strong { padding: 0.25rem 0.4rem; border-radius: 999px; background: #ffffff08; color: #9eb1bd; font-size: 0.52rem; text-transform: capitalize; }
+.log-actual-summary .attendance-completed { background: #38c88918; color: #62dda5; }
+.log-actual-summary .attendance-skipped { background: #ef626218; color: #ff8989; }
+.log-actual-summary .attendance-rest { color: #f6b462; }
+
+/* Keep each day's plan easy to scan without stretching shorter cards. */
+.log-grid { align-items: start; gap: 1.1rem; }
+.log-grid > article { min-width: 0; padding: 1.25rem; border-radius: 18px; background: #10263a; }
+.log-grid > .log-day-selected { border-color: #f6b46280; background: linear-gradient(160deg, #19354b, #10263a 55%); box-shadow: 0 0 0 1px #f6b46220; }
+.log-grid > article > p { margin-bottom: .35rem; font-size: .65rem; font-weight: 700; }
+.log-grid .log-day-date { margin: 0 0 .5rem; color: #b7c9d5; font-size: .73rem; }
+.log-grid h3 { margin: 0 0 .75rem; font-size: 1.3rem; line-height: 1.25; }
+.log-grid .daily-plan-marker { margin-bottom: .65rem; font-size: .62rem; }
+.log-grid .log-actual-summary { margin: .15rem 0 .9rem; padding: .65rem .75rem; border: 1px solid #ffffff19; border-radius: 10px; background: #0b2032; color: #b9cbd6; font-size: .7rem; line-height: 1.4; }
+.log-grid .log-actual-summary strong { flex: none; padding: .3rem .55rem; font-size: .62rem; }
+.log-grid .log-actual-summary .attendance-rest { background: #f6b4621c; }
+.log-grid ul { border-top: 1px solid #ffffff1c; }
+.log-grid li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .25rem .65rem; min-height: 45px; padding: .7rem .55rem; font-size: .82rem; line-height: 1.35; }
+.log-grid li small { float: none; max-width: 10rem; color: #aabfce; font-size: .68rem; line-height: 1.35; text-align: right; }
+.log-grid li.actual-completed { border-left: 3px solid #38c889; background: #38c8890e; }
+.log-grid li.actual-skipped { border-left: 3px solid #ef6262; background: #ef62620e; }
+.log-grid li.actual-replaced { border-left: 3px solid #f6b462; background: #f6b4620e; }
+.log-grid .actual-status { grid-column: 1 / -1; width: fit-content; margin: 0; padding: .18rem .45rem; border-radius: 999px; background: #ffffff0b; font-size: .63rem; font-weight: 700; }
+.log-grid .actual-completed .actual-status { background: #38c8891f; }
+.log-grid .actual-skipped .actual-status { background: #ef62621f; }
+.log-grid .actual-replaced .actual-status { background: #f6b4621f; }
+.log-grid .log-rest-message { margin-top: .85rem; padding: 1rem; border: 1px dashed #f6b46255; border-radius: 10px; background: #f6b4620b; color: #bed0da; font-size: .76rem; line-height: 1.5; }
+@media (max-width: 1050px) { .log-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .log-grid > article { padding: 1rem; } .log-grid li { grid-template-columns: 1fr; } .log-grid li small { max-width: none; text-align: left; } .log-grid .log-actual-summary { flex-wrap: wrap; } }

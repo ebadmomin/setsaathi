@@ -1,0 +1,64 @@
+/* One scrollbar palette for the dark member experience, including dialogs. */
+html:has(.plan-page),
+.plan-page * {
+  scrollbar-color: #d99a55 #10263a;
+  scrollbar-width: thin;
+}
+
+html:has(.plan-page)::-webkit-scrollbar,
+.plan-page *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html:has(.plan-page)::-webkit-scrollbar-track,
+.plan-page *::-webkit-scrollbar-track {
+  background: #10263a;
+  border-radius: 999px;
+}
+
+html:has(.plan-page)::-webkit-scrollbar-thumb,
+.plan-page *::-webkit-scrollbar-thumb {
+  background: #d99a55;
+  border: 2px solid #10263a;
+  border-radius: 999px;
+}
+
+html:has(.plan-page)::-webkit-scrollbar-thumb:hover,
+.plan-page *::-webkit-scrollbar-thumb:hover {
+  background: #f6b462;
+}
+
+html:has(.plan-page)::-webkit-scrollbar-corner,
+.plan-page *::-webkit-scrollbar-corner {
+  background: #10263a;
+}
+
+html:has(.plan-page)::-webkit-scrollbar-button,
+.plan-page *::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Reserve room for the vertical thumb without covering modal content. */
+.gym-equipment-options,
+.coach-messages,
+.exercise-detail,
+.exercise-how-to-modal,
+.privacy-dialog {
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 700px) {
+  .app-tabs,
+  .library-muscles {
+    padding-bottom: .4rem;
+    scrollbar-color: #d99a55 #10263a;
+  }
+
+  .app-tabs::-webkit-scrollbar,
+  .library-muscles::-webkit-scrollbar {
+    height: 6px;
+  }
+}

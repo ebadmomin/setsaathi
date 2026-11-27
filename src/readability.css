@@ -1,0 +1,96 @@
+/* Use the display face for major landmarks; use the body face where people read or act. */
+body .profile-panel h2,
+body .profile-panel .profile-name,
+body .plan-page .library-card h3,
+body .plan-page .progress-exercise h3,
+body .plan-page .log-grid h3,
+body .plan-page .managed-phase li strong {
+  font-family: var(--studio-body) !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.025em !important;
+  text-transform: none !important;
+}
+body .profile-panel h2 { font-size: clamp(1.9rem, 5vw, 2.35rem) !important; }
+body .profile-panel .profile-name { font-size: 1.25rem !important; }
+body .plan-page .library-card h3 { font-size: 1.08rem !important; }
+body .plan-page .progress-exercise h3 { font-size: clamp(1.15rem, 2vw, 1.4rem) !important; }
+body .plan-page .log-grid h3 { font-size: 1.15rem !important; }
+body .plan-page :is(.library-card-copy, .log-grid li, .progress-exercise-copy p,
+  .managed-phase li small, .coach-heading span, .gym-equipment-shared p) {
+  color: #d1d6d4 !important;
+}
+body .plan-page :is(.progress-exercise-copy small, .progress-section-title > span,
+  .progress-history-grid time, .progress-history-grid span, .library-card-bottom,
+  .managed-phase-limit) {
+  color: #bbc2c1 !important;
+  font-size: .78rem !important;
+  line-height: 1.45;
+}
+body .plan-page :is(.progress-exercise-actions button, .library-muscles button,
+  .managed-phase .managed-add-exercise) {
+  font-family: var(--studio-body) !important;
+  font-size: .78rem !important;
+  font-weight: 700 !important;
+}
+body .plan-page :is(.library-card-copy, .progress-exercise-copy p,
+  .managed-phase li small) { font-size: .86rem !important; line-height: 1.55 !important; }
+body .plan-page :is(.library-card, .progress-exercise, .managed-phase li) {
+  -webkit-font-smoothing: antialiased;
+}
+body :is(.plan-page, .auth, .profile-panel) :is(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--studio-accent) !important;
+  outline-offset: 3px;
+}
+.exercise-library-view .library-load-more {
+  grid-column: 1 / -1;
+  min-height: 48px;
+  border: 1px solid #f4b56688;
+  border-radius: 10px;
+  background: #25292a;
+  color: #ffc47f;
+  font: 700 .88rem var(--studio-body);
+}
+.exercise-library-view .library-load-more:hover { background: #303638; }
+.progress-view .progress-overview { width: 100%; max-width: none !important; }
+
+/* Give password recovery its own centered layout instead of leaving an empty grid column. */
+main.auth-reset-page:not(.plan-page):not(.library-page) {
+  display: block;
+  min-height: 100dvh;
+  background: var(--studio-bg);
+}
+.auth-reset-page .auth {
+  min-height: 100dvh;
+  width: 100%;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+.auth-reset-page .auth-reset-card {
+  width: min(100%, 480px);
+  margin: 0;
+}
+.auth-reset-logo {
+  display: block;
+  width: 142px;
+  height: 82px;
+  object-fit: contain;
+  margin: 0 auto 1.25rem;
+}
+.auth-reset-page .forgot-password h2 {
+  font-size: clamp(2.5rem, 6vw, 3.25rem) !important;
+  line-height: 1.02 !important;
+}
+.auth-reset-page .forgot-copy { color: #d1d6d4; line-height: 1.55; }
+.auth-reset-page .forgot-password .fine { margin-top: .35rem; }
+
+/* Page-specific spacing: keep primary actions close to the page introduction. */
+.coach-view .coach-form { margin-top: 1.25rem; }
+.coach-view .coach-start { margin-top: 1rem; }
+.gym-equipment-section .gym-equipment-top-actions { align-self: center; }
+.gym-equipment-section .gym-place-badge[hidden],
+.gym-equipment-section .gym-place-attribution[hidden] { display: none !important; }
+@media (max-width: 700px) {
+  .coach-view .coach-form { padding: 1rem; }
+  .progress-view .progress-overview { padding: 1rem !important; }
+  .exercise-library-view .library-card { min-height: 0; }
+}
